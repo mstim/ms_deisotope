@@ -4,6 +4,7 @@ terms for them.
 """
 
 import os
+import re
 import hashlib
 import warnings
 
@@ -50,6 +51,69 @@ class FileContent(Term):
     vocabulary identifier.
     """
     pass
+
+
+type_pat = re.compile("([A-Za-z]+)=xsd:(%s+)" % '|'.join(
+    {'IDREF', "long", 'nonNegativeInteger', 'positiveInteger', 'string'}))
+
+xsd_to_regex = {
+    "IDREF": r"(\S+)",
+    "long": r"(-?\d+)",
+    "nonNegativeInteger": r"(\d+)",
+    "positiveInteger": r"(\d+)",
+    "string": r"(\S+)",
+}
+
+
+def build_parser(term):
+    parser = None
+    if "Native format defined by" in term.description:
+        tokens = []
+        desc = term.description.split(
+            "Native format defined by", 1)[1].rstrip()
+        for mat in type_pat.finditer(desc):
+            tokens.append(mat.groups())
+        parser = re.compile(
+            ''.join([r"(%s)=%s\s?" % (k, xsd_to_regex[v]) for k, v in tokens]))
+    return parser
+
+
+class ScanID(str):
+    def __new__(cls, value, fields=None):
+        if fields is None:
+            fields = {}
+        inst = str.__new__(cls, value)
+        inst.fields = fields
+        return inst
+
+    @classmethod
+    def make_fields(cls, scan_id):
+        match = cls.parser.search(scan_id)
+        if match is None:
+            return {}
+        groups = match.groups()
+        n = len(groups)
+        i = 0
+        fields = {}
+        while i < n:
+            k = groups[i]
+            v = groups[i + 1]
+            i += 2
+            try:
+                v = int(v)
+            except ValueError:
+                pass
+            fields[k] = v
+        return fields
+
+
+# class TypedScanID(ScanID):
+#     parser = build_parser(term)
+
+#     def __new__(cls, value):
+#         fields = make_fields(cls.parser, value)
+#         inst = ScanID.__new__(cls, value, fields)
+#         return inst
 
 
 id_formats = []
