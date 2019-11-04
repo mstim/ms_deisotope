@@ -8,6 +8,8 @@ import re
 import hashlib
 import warnings
 
+from collections import OrderedDict
+
 try:
     from collections.abc import MutableMapping
 except ImportError:
@@ -64,6 +66,14 @@ xsd_to_regex = {
     "string": r"(\S+)",
 }
 
+xsd_to_type = {
+    "IDREF": str,
+    "long": int,
+    "nonNegativeInteger": int,
+    "positiveInteger": int,
+    "string": str,
+}
+
 
 def build_parser(term):
     parser = None
@@ -78,17 +88,26 @@ def build_parser(term):
     return parser
 
 
-class ScanID(str):
-    def __new__(cls, value, fields=None):
-        if fields is None:
-            fields = {}
-        inst = str.__new__(cls, value)
-        inst.fields = fields
-        return inst
+class NativeIDParser(object):
+    def __init__(self, parser, tokens):
+        self.parser = parser
+        self.tokens = OrderedDict(tokens)
 
     @classmethod
-    def make_fields(cls, scan_id):
-        match = cls.parser.search(scan_id)
+    def from_term(cls, term):
+        if "Native format defined by" in term.description:
+            tokens = []
+            desc = term.description.split(
+                "Native format defined by", 1)[1].rstrip()
+            for mat in type_pat.finditer(desc):
+                tokens.append(mat.groups())
+            parser = re.compile(
+                ''.join([r"(%s)=%s\s?" % (k, xsd_to_regex[v]) for k, v in tokens]))
+            return cls(parser, tokens)
+        return None
+
+    def search(self, string):
+        match = self.parser.search(string)
         if match is None:
             return {}
         groups = match.groups()
@@ -107,13 +126,31 @@ class ScanID(str):
         return fields
 
 
-# class TypedScanID(ScanID):
-#     parser = build_parser(term)
+class ScanID(str):
+    __slots__ = ()
 
-#     def __new__(cls, value):
-#         fields = make_fields(cls.parser, value)
-#         inst = ScanID.__new__(cls, value, fields)
-#         return inst
+    def _parse(self):
+        match = self.parser.search(self)
+        if match is None:
+            return {}
+        groups = match.groups()
+        n = len(groups)
+        i = 0
+        fields = {}
+        while i < n:
+            k = groups[i]
+            v = groups[i + 1]
+            i += 2
+            try:
+                v = int(v)
+            except ValueError:
+                pass
+            fields[k] = v
+        return fields
+
+    @property
+    def fields(self):
+        return self._parse()
 
 
 id_formats = []
