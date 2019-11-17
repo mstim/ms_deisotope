@@ -32,6 +32,10 @@ class IDFormat(Term):
     A :class:`IDFormat` is equal to its name and its controlled
     vocabulary identifier.
 
+    An instance may also be used to parse a string in its format
+    using its :meth:`parse` method, creating a :class:`dict` of
+    its fields.
+
     Attributes
     ----------
     parser: NativeIDParser
@@ -113,6 +117,19 @@ class NativeIDParser(object):
 
     @classmethod
     def from_term(cls, term):
+        """Construct a :class:`NativeIDParser` from :class:`IDFormat` term.
+
+        Parameters
+        ----------
+        term : IDFormat
+            The nativeID format specification to build a parser for
+
+        Returns
+        -------
+        :class:`NativeIDParser`:
+            The constructed parser, or :const:`None` if no regular expression could be
+            constructed.
+        """
         if "Native format defined by" in term.description:
             tokens = []
             desc = term.description.split(
@@ -125,6 +142,24 @@ class NativeIDParser(object):
         return None
 
     def search(self, string):
+        """Parse a string according to this parser's pattern,
+        returning the type-cast fields as a :class:`dict`.
+
+        Parameters
+        ----------
+        string : str
+            The string to parse
+
+        Returns
+        -------
+        dict
+            The fields of the scan ID
+
+        Raises
+        ------
+        ValueError:
+            If the string does not conform to the expected pattern
+        """
         match = self.parser.search(string)
         if match is None:
             raise ValueError("%r did not match expected nativeID format %s!" % (string, self.parser.pattern, ))
@@ -142,6 +177,11 @@ class NativeIDParser(object):
                 pass
             fields[k] = v
         return fields
+
+    def __call__(self, string):
+        """A wrapper for :meth:`search`
+        """
+        return self.search(string)
 
 
 id_formats = []
