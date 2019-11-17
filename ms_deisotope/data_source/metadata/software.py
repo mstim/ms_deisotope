@@ -77,12 +77,12 @@ software_names = TermSet([
                  'software',
                  [u'software']),
     SoftwareName(u'SCIEX software', u'MS:1000690',
-                 (u'SCIEX or Applied Biosystems software for data acquisition'
+                 (u'SCIEX or Applied Biosystems software for data acquisition '
                   u'and analysis.'),
                  'software',
                  [u'software']),
     SoftwareName(u'Applied Biosystems software', u'MS:1000691',
-                 (u'Applied Biosystems|MDS SCIEX software for data acquisition'
+                 (u'Applied Biosystems|MDS SCIEX software for data acquisition '
                   u'and analysis.'),
                  'software',
                  [u'software']),
@@ -99,12 +99,12 @@ software_names = TermSet([
                  'software',
                  [u'software']),
     SoftwareName(u'SRM software', u'MS:1000871',
-                 (u'Software used to predict, select, or optimize transitions or'
+                 (u'Software used to predict, select, or optimize transitions or '
                   u'analyze the results of selected reaction monitoring runs.'),
                  'software',
                  [u'software']),
     SoftwareName(u'peptide attribute calculation software', u'MS:1000873',
-                 (u'Software used to predict or calculate numerical attributes'
+                 (u'Software used to predict or calculate numerical attributes '
                   u'of peptides.'),
                  'software',
                  [u'software']),
@@ -121,14 +121,14 @@ software_names = TermSet([
                  'software',
                  [u'software']),
     SoftwareName(u'custom unreleased software tool', u'MS:1000799',
-                 (u'A software tool that has not yet been released. The value'
-                  u'should describe the software. Please do not use this term'
-                  u'for publicly available software - contact the PSI-MS working'
+                 (u'A software tool that has not yet been released. The value '
+                  u'should describe the software. Please do not use this term '
+                  u'for publicly available software - contact the PSI-MS working '
                   u'group in order to have another CV term added.'),
                  'software',
                  [u'software']),
     SoftwareName(u'BSI software', u'MS:1001949',
-                 (u'Bioinformatics Solutions Inc. Software for data processing'
+                 (u'Bioinformatics Solutions Inc. Software for data processing '
                   u'and analysis.'),
                  'software',
                  [u'software']),
@@ -141,7 +141,7 @@ software_names = TermSet([
                  'software',
                  [u'SCiLS software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'Analyst', u'MS:1000551',
-                 (u'SCIEX or Applied Biosystems|MDS SCIEX software for data'
+                 (u'SCIEX or Applied Biosystems|MDS SCIEX software for data '
                   u'acquisition.'),
                  'software',
                  [u'SCIEX software', u'acquisition software', u'analysis software', u'data processing software', u'software']),
@@ -174,17 +174,17 @@ software_names = TermSet([
                  'software',
                  [u'Bruker software', u'acquisition software', u'software']),
     SoftwareName(u'ChromaTOF HRT software', u'MS:1001877',
-                 (u'Software for acquisition, processing and analysis of data'
+                 (u'Software for acquisition, processing and analysis of data '
                   u'for LECO instruments.'),
                  'software',
                  [u'acquisition software', u'analysis software', u'data processing software', u'LECO software', u'software']),
     SoftwareName(u'6300 Series Ion Trap Data Analysis Software', u'MS:1000688',
-                 (u'Software for data analysis of 6300 series ion trap mass'
+                 (u'Software for data analysis of 6300 series ion trap mass '
                   u'spectrometers.'),
                  'software',
                  [u'Agilent software', u'acquisition software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'ChromaTOF software', u'MS:1001799',
-                 (u'Software for acquisition, processing and analysis of data'
+                 (u'Software for acquisition, processing and analysis of data '
                   u'for LECO instruments.'),
                  'software',
                  [u'acquisition software', u'analysis software', u'data processing software', u'LECO software', u'software']),
@@ -197,12 +197,12 @@ software_names = TermSet([
                  'software',
                  [u'Agilent software', u'acquisition software', u'software']),
     SoftwareName(u'GPS Explorer', u'MS:1000661',
-                 (u'SCIEX or Applied Biosystems software for data acquisition'
+                 (u'SCIEX or Applied Biosystems software for data acquisition '
                   u'and analysis.'),
                  'software',
                  [u'SCIEX software', u'acquisition software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'Voyager Biospectrometry Workstation System', u'MS:1000539',
-                 (u'Applied Biosystems MALDI-TOF data acquisition and analysis'
+                 (u'Applied Biosystems MALDI-TOF data acquisition and analysis '
                   u'system.'),
                  'software',
                  [u'Applied Biosystems software', u'acquisition software', u'analysis software', u'data processing software', u'software']),
@@ -215,17 +215,17 @@ software_names = TermSet([
                  'software',
                  [u'Waters software', u'acquisition software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'4700 Explorer', u'MS:1000537',
-                 (u'Applied Biosystems software for data acquisition and'
+                 (u'Applied Biosystems software for data acquisition and '
                   u'analysis.'),
                  'software',
                  [u'Applied Biosystems software', u'acquisition software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'Data Explorer', u'MS:1000536',
-                 (u'Applied Biosystems software for data acquisition and'
+                 (u'Applied Biosystems software for data acquisition and '
                   u'analysis.'),
                  'software',
                  [u'Applied Biosystems software', u'acquisition software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'4000 Series Explorer Software', u'MS:1000659',
-                 (u'SCIEX or Applied Biosystems software for data acquisition'
+                 (u'SCIEX or Applied Biosystems software for data acquisition '
                   u'and analysis.'),
                  'software',
                  [u'SCIEX software', u'acquisition software', u'analysis software', u'data processing software', u'software']),
@@ -234,24 +234,24 @@ software_names = TermSet([
                  'software',
                  [u'Bruker software', u'acquisition software', u'software']),
     SoftwareName(u'SCIEX TOF/TOF Series Explorer Software', u'MS:1001483',
-                 (u'SCIEX or Applied Biosystems software for TOF/TOF data'
+                 (u'SCIEX or Applied Biosystems software for TOF/TOF data '
                   u'acquisition and analysis.'),
                  'software',
                  [u'SCIEX software', u'acquisition software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'MALDI Solutions', u'MS:1001558',
-                 (u'Shimadzu Biotech software for data acquisition, processing,'
+                 (u'Shimadzu Biotech software for data acquisition, processing, '
                   u'and analysis.'),
                  'software',
                  [u'acquisition software', u'analysis software', u'data processing software', u'Shimadzu Corporation software', u'software']),
     SoftwareName(u'Lipid-Pro', u'MS:1002972',
-                 (u'A computational lipid identification solution for untargeted'
-                  u'lipidomics on data-independent acquisition tandem mass'
+                 (u'A computational lipid identification solution for untargeted '
+                  u'lipidomics on data-independent acquisition tandem mass '
                   u'spectrometry platforms.'),
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
     SoftwareName(u'Trapper', u'MS:1000553',
-                 (u'A software program for converting Agilent MassHunter format'
-                  u'to mzXML or mzML. Trapper was originally developed at the'
+                 (u'A software program for converting Agilent MassHunter format '
+                  u'to mzXML or mzML. Trapper was originally developed at the '
                   u'Institute for Systems Biology.'),
                  'software',
                  [u'data processing software', u'software']),
@@ -268,8 +268,8 @@ software_names = TermSet([
                  'software',
                  [u'Bruker software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'LipidMatch', u'MS:1002969',
-                 (u'An automated workflow for rule-based lipid identification'
-                  u'using untargeted high-resolution tandem mass spectrometry'
+                 (u'An automated workflow for rule-based lipid identification '
+                  u'using untargeted high-resolution tandem mass spectrometry '
                   u'data.'),
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
@@ -314,34 +314,34 @@ software_names = TermSet([
                  'software',
                  [u'Bruker software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'ALEX123', u'MS:1002977',
-                 (u'Analysis of lipid experiments 123, a calculator with m/z'
-                  u'values of intact lipid molecules (MS1) and their fragment'
+                 (u'Analysis of lipid experiments 123, a calculator with m/z '
+                  u'values of intact lipid molecules (MS1) and their fragment '
                   u'ions at the MS2 and MS3 level.'),
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
     SoftwareName(u'ALEX', u'MS:1002976',
-                 (u'Analysis of lipid experiments, a calculator for m/z values'
+                 (u'Analysis of lipid experiments, a calculator for m/z values '
                   u'of intact lipid molecules (MS1).'),
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
     SoftwareName(u'LipidFinder', u'MS:1002973',
-                 (u'A computational workflow for the discovery of lipids for the'
+                 (u'A computational workflow for the discovery of lipids for the '
                   u'identification of eicosanoid-phosphoinositides in platelets.'),
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
     SoftwareName(u'LipidBlast', u'MS:1002971',
-                 (u'LC-MS-based lipidomics and automated identification of'
+                 (u'LC-MS-based lipidomics and automated identification of '
                   u'lipids using the LipidBlast in-silico MS/MS library.'),
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
     SoftwareName(u'Greazy', u'MS:1002970',
-                 (u'Open-source software for automated phospholipid tandem mass'
+                 (u'Open-source software for automated phospholipid tandem mass '
                   u'spectrometry identification.'),
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
     SoftwareName(u'LipidQA', u'MS:1002980',
-                 (u'Lipid qualitative/quantitative analysis software for'
-                  u'identification and quantitation of complex lipid molecular'
+                 (u'Lipid qualitative/quantitative analysis software for '
+                  u'identification and quantitation of complex lipid molecular '
                   u'species.'),
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
@@ -354,8 +354,8 @@ software_names = TermSet([
                  'software',
                  [u'Bruker software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'MSDK', u'MS:1002645',
-                 (u'Mass Spectrometry Development Kit (MSDK) is a Java library'
-                  u'of algorithms for processing of mass spectrometry data."'
+                 (u'Mass Spectrometry Development Kit (MSDK) is a Java library '
+                  u'of algorithms for processing of mass spectrometry data." '
                   u'[PSI:PI'),
                  'software',
                  [u'analysis software', u'data processing software', u'software']),
@@ -368,15 +368,15 @@ software_names = TermSet([
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
     SoftwareName(u'MzWiff', u'MS:1000591',
-                 (u'A software program for converting Applied Biosystems wiff'
-                  u'file format to the mzXML or mzML format. MzWiff is currently'
-                  u'maintained at the Institute for Systems Biology. It replaces'
+                 (u'A software program for converting Applied Biosystems wiff '
+                  u'file format to the mzXML or mzML format. MzWiff is currently '
+                  u'maintained at the Institute for Systems Biology. It replaces '
                   u'the slower mzStar program.'),
                  'software',
                  [u'data processing software', u'software']),
     SoftwareName(u'LipidHunter', u'MS:1002967',
-                 (u'Software for identification of phospholipids by high-'
-                  u'throughput processing of LC-MS and shotgun lipidomics'
+                 (u'Software for identification of phospholipids by high- '
+                  u'throughput processing of LC-MS and shotgun lipidomics '
                   u'datasets.'),
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
@@ -389,13 +389,13 @@ software_names = TermSet([
                  'software',
                  [u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'Maltcms', u'MS:1002344',
-                 (u'Modular Application Toolkit for Chromatography Mass-'
-                  u'Spectrometry is an application framework mainly for'
+                 (u'Modular Application Toolkit for Chromatography Mass- '
+                  u'Spectrometry is an application framework mainly for '
                   u'developers." [PSI:PI'),
                  'software',
                  [u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'MZmine', u'MS:1002342',
-                 (u'A framework for differential analysis of mass spectrometry'
+                 (u'A framework for differential analysis of mass spectrometry '
                   u'data." [PMID:16403790'),
                  'software',
                  [u'analysis software', u'data processing software', u'software']),
@@ -403,23 +403,28 @@ software_names = TermSet([
                  (u'Thermo Scientific PepFinder BioPharma analysis software.'),
                  'software',
                  [u'data processing software', u'software']),
+    SoftwareName(u'LPPtiger', u'MS:1003010',
+                 (u'Software for lipidome-specific prediction and identification '
+                  u'of oxidized phospholipids from LC-MS datasets.'),
+                 'software',
+                 [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
     SoftwareName(u'Spectrum Mill for MassHunter Workstation', u'MS:1000687',
-                 (u'Software for protein identification and characterization of'
+                 (u'Software for protein identification and characterization of '
                   u'complex protein digest mixtures.'),
                  'software',
                  [u'Agilent software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'METLIN', u'MS:1000686',
-                 (u'Personal Metabolite Database for MassHunter Workstation.'
+                 (u'Personal Metabolite Database for MassHunter Workstation. '
                   u'Software for identification of human metabolites.'),
                  'software',
                  [u'Agilent software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'MassHunter Mass Profiler', u'MS:1000685',
-                 (u'Software for quantitation and statistical analysis of TOF'
+                 (u'Software for quantitation and statistical analysis of TOF '
                   u'and Q-TOF LC/MS data.'),
                  'software',
                  [u'Agilent software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'Genespring MS', u'MS:1000684',
-                 (u'Software for quantitation and statistical analysis of TOF'
+                 (u'Software for quantitation and statistical analysis of TOF '
                   u'and Q-TOF LC/MS data.'),
                  'software',
                  [u'Agilent software', u'analysis software', u'data processing software', u'software']),
@@ -432,12 +437,12 @@ software_names = TermSet([
                  'software',
                  [u'Agilent software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'MassHunter Quantitative Analysis', u'MS:1000681',
-                 (u'Software for quantitation of Triple Quadrupole and'
+                 (u'Software for quantitation of Triple Quadrupole and '
                   u'Quadrupole Time-of-Flight data.'),
                  'software',
                  [u'Agilent software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'MassHunter Qualitative Analysis', u'MS:1000680',
-                 (u'Software for data analysis of data from 6000 series'
+                 (u'Software for data analysis of data from 6000 series '
                   u'instruments.'),
                  'software',
                  [u'Agilent software', u'analysis software', u'data processing software', u'software']),
@@ -446,47 +451,47 @@ software_names = TermSet([
                  'software',
                  [u'data processing software', u'software']),
     SoftwareName(u'XCMS', u'MS:1001582',
-                 (u'Bioconductor package XCMS for preprocessing high-throughput,'
+                 (u'Bioconductor package XCMS for preprocessing high-throughput, '
                   u'untargeted analyte profiling data.'),
                  'software',
                  [u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'UNIFY', u'MS:1001796',
-                 (u'Waters UNIFY software for liquid chromatography and mass'
+                 (u'Waters UNIFY software for liquid chromatography and mass '
                   u'spectrometry acquisition.'),
                  'software',
                  [u'Waters software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'Empower', u'MS:1001795',
-                 (u'Waters Empower software for liquid chromatography and mass'
+                 (u'Waters Empower software for liquid chromatography and mass '
                   u'spectrometry acquisition.'),
                  'software',
                  [u'Waters software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'Pro Quant', u'MS:1000670',
-                 (u'Applied Biosystems|MDS SCIEX software for protein ID and'
+                 (u'Applied Biosystems|MDS SCIEX software for protein ID and '
                   u'quant by iTRAQ.'),
                  'software',
                  [u'SCIEX software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'Pro BLAST', u'MS:1000671',
-                 (u'Applied Biosystems|MDS SCIEX software for MS-BLAST'
+                 (u'Applied Biosystems|MDS SCIEX software for MS-BLAST '
                   u'identification.'),
                  'software',
                  [u'SCIEX software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'MultiQuant', u'MS:1000674',
-                 (u'Applied Biosystems|MDS SCIEX software for MRM-based'
+                 (u'Applied Biosystems|MDS SCIEX software for MRM-based '
                   u'quantitation.'),
                  'software',
                  [u'SCIEX software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'ProteinPilot Software', u'MS:1000663',
-                 (u'SCIEX or Applied Biosystems|MDS SCIEX software for protein'
+                 (u'SCIEX or Applied Biosystems|MDS SCIEX software for protein '
                   u'ID and quant.'),
                  'software',
                  [u'SCIEX software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'LightSight Software', u'MS:1000662',
-                 (u'SCIEX or Applied Biosystems|MDS SCIEX software metabolite'
+                 (u'SCIEX or Applied Biosystems|MDS SCIEX software metabolite '
                   u'identification.'),
                  'software',
                  [u'SCIEX software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'MarkerView Software', u'MS:1000665',
-                 (u'Applied Biosystems|MDS SCIEX software for metabolomics and'
+                 (u'Applied Biosystems|MDS SCIEX software for metabolomics and '
                   u'biomarker profiling.'),
                  'software',
                  [u'SCIEX software', u'analysis software', u'data processing software', u'software']),
@@ -495,33 +500,33 @@ software_names = TermSet([
                  'software',
                  [u'SCIEX software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'BioAnalyst', u'MS:1000667',
-                 (u'Applied Biosystems|MDS SCIEX software for bio-related data'
+                 (u'Applied Biosystems|MDS SCIEX software for bio-related data '
                   u'exploration.'),
                  'software',
                  [u'SCIEX software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'MRMPilot Software', u'MS:1000666',
-                 (u'Applied Biosystems|MDS SCIEX software for MRM assay'
+                 (u'Applied Biosystems|MDS SCIEX software for MRM assay '
                   u'development.'),
                  'software',
                  [u'SCIEX software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'Pro ICAT', u'MS:1000669',
-                 (u'Applied Biosystems|MDS SCIEX software for protein ID and'
+                 (u'Applied Biosystems|MDS SCIEX software for protein ID and '
                   u'quant by ICAT.'),
                  'software',
                  [u'SCIEX software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'Pro ID', u'MS:1000668',
-                 (u'Applied Biosystems|MDS SCIEX software for protein'
+                 (u'Applied Biosystems|MDS SCIEX software for protein '
                   u'identification.'),
                  'software',
                  [u'SCIEX software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'conversion software', u'MS:1002333',
-                 (u'Computer software primarily designed to convert data'
-                  u'represented in one format to another format, sometimes with'
+                 (u'Computer software primarily designed to convert data '
+                  u'represented in one format to another format, sometimes with '
                   u'minor data alterations in the process.'),
                  'software',
                  [u'data processing software', u'software']),
     SoftwareName(u'ms_deisotope', u'MS:1002990',
-                 (u'ms_deisotope, a library for deisotoping and charge state'
+                 (u'ms_deisotope, a library for deisotoping and charge state '
                   u'deconvolution of mass spectra.'),
                  'software',
                  [u'data processing software', u'software']),
@@ -530,13 +535,13 @@ software_names = TermSet([
                  'software',
                  [u'quantitation software name', u'analysis software', u'data processing software', u'software', u'quantification information']),
     SoftwareName(u'massWolf', u'MS:1000538',
-                 (u'A software for converting Waters raw directory format to'
-                  u'mzXML or mzML. MassWolf was originally developed at the'
+                 (u'A software for converting Waters raw directory format to '
+                  u'mzXML or mzML. MassWolf was originally developed at the '
                   u'Institute for Systems Biology.'),
                  'software',
                  [u'data processing software', u'software']),
     SoftwareName(u'Bioworks', u'MS:1000533',
-                 (u'Thermo Finnigan software for data analysis of peptides and'
+                 (u'Thermo Finnigan software for data analysis of peptides and '
                   u'proteins.'),
                  'software',
                  [u'Thermo Finnigan software', u'analysis software', u'data processing software', u'software']),
@@ -545,41 +550,41 @@ software_names = TermSet([
                  'software',
                  [u'Bruker software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'Proteome Discoverer', u'MS:1000650',
-                 (u'Thermo Scientific software for data analysis of peptides and'
+                 (u'Thermo Scientific software for data analysis of peptides and '
                   u'proteins.'),
                  'software',
                  [u'Thermo Finnigan software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'MSnbase', u'MS:1002870',
-                 (u'Bioconductor package MSnbase provides infrastructure for'
-                  u'manipulation, processing and visualization of mass'
-                  u'spectrometry and proteomics data, ranging from raw to'
+                 (u'Bioconductor package MSnbase provides infrastructure for '
+                  u'manipulation, processing and visualization of mass '
+                  u'spectrometry and proteomics data, ranging from raw to '
                   u'quantitative and annotated data.'),
                  'software',
                  [u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'CAMERA', u'MS:1002871',
-                 (u'Bioconductor package CAMERA for annotation of peak lists'
-                  u'generated by xcms, rule based annotation of isotopes and'
-                  u'adducts, isotope validation, EIC correlation based tagging'
+                 (u'Bioconductor package CAMERA for annotation of peak lists '
+                  u'generated by xcms, rule based annotation of isotopes and '
+                  u'adducts, isotope validation, EIC correlation based tagging '
                   u'of unknown adducts and fragments.'),
                  'software',
                  [u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'mzR', u'MS:1002869',
-                 (u'Bioconductor package mzR for reading and writing mass'
+                 (u'Bioconductor package mzR for reading and writing mass '
                   u'spectrometry data files.'),
                  'software',
                  [u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'LOBSTAHS', u'MS:1002979',
-                 (u'Adduct-Based lipidomics software for the discovery and'
+                 (u'Adduct-Based lipidomics software for the discovery and '
                   u'identification of oxidative stress biomarkers.'),
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
     SoftwareName(u'LIMSA', u'MS:1002978',
-                 (u'Software tool for the quantitative analysis of mass'
+                 (u'Software tool for the quantitative analysis of mass '
                   u'spectrometric lipidome data.'),
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
     SoftwareName(u'LipiDex', u'MS:1002974',
-                 (u'An integrated software package for high-confidence lipid'
+                 (u'An integrated software package for high-confidence lipid '
                   u'identification.'),
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
@@ -588,16 +593,16 @@ software_names = TermSet([
                  'software',
                  [u'data processing software', u'software']),
     SoftwareName(u'ReAdW', u'MS:1000541',
-                 (u'A software program for converting Thermo Finnigan RAW file'
-                  u'format to mzXML or mzML. ReAdW was originally developed at'
-                  u'the Institute for Systems Biology. Its whimsical interleaved'
+                 (u'A software program for converting Thermo Finnigan RAW file '
+                  u'format to mzXML or mzML. ReAdW was originally developed at '
+                  u'the Institute for Systems Biology. Its whimsical interleaved '
                   u'spelling and capitalization is pronounced \\"readraw\\".'),
                  'software',
                  [u'data processing software', u'software']),
     SoftwareName(u'MzStar', u'MS:1000542',
-                 (u'A software program for converting Applied Biosystems wiff'
-                  u'file format to mzXML format. MzStar was originally developed'
-                  u'at the Institute for Systems Biology. It is now obsoleted by'
+                 (u'A software program for converting Applied Biosystems wiff '
+                  u'file format to mzXML format. MzStar was originally developed '
+                  u'at the Institute for Systems Biology. It is now obsoleted by '
                   u'the MzWiff program.'),
                  'software',
                  [u'data processing software', u'software']),
@@ -610,7 +615,7 @@ software_names = TermSet([
                  'software',
                  [u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'ProteoWizard software', u'MS:1000615',
-                 (u'ProteoWizard software for data processing and analysis.'
+                 (u'ProteoWizard software for data processing and analysis. '
                   u'Primarily developed by the labs of P. Malick and D. Tabb.'),
                  'software',
                  [u'analysis software', u'data processing software', u'software']),
@@ -623,17 +628,17 @@ software_names = TermSet([
                  'software',
                  [u'Waters software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'Proteios', u'MS:1000600',
-                 (u'Database application and analysis platform for proteomics."'
+                 (u'Database application and analysis platform for proteomics." '
                   u'[PSI:MS'),
                  'software',
                  [u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'LIQUID', u'MS:1002975',
-                 (u'An-open source software for identifying lipids in LC-MS/MS-'
+                 (u'An-open source software for identifying lipids in LC-MS/MS- '
                   u'based lipidomics data.'),
                  'software',
                  [u'lipidomics analysis software', u'data processing software', u'small molecule analysis software', u'software', u'analysis software']),
     SoftwareName(u'PIA', u'MS:1002387',
-                 (u'PIA - Protein Inference Algorithms, a toolbox for protein'
+                 (u'PIA - Protein Inference Algorithms, a toolbox for protein '
                   u'inference and identification analysis." [PSI:PI'),
                  'software',
                  [u'postprocessing software', u'analysis software', u'data processing software', u'software']),
@@ -642,12 +647,12 @@ software_names = TermSet([
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'pNovo', u'MS:1002983',
-                 (u'pNovo tool for de novo peptide sequencing and identification'
+                 (u'pNovo tool for de novo peptide sequencing and identification '
                   u'using HCD spectra.'),
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'Tide', u'MS:1002575',
-                 (u'Tide open-source sequence search program developed at the'
+                 (u'Tide open-source sequence search program developed at the '
                   u'University of Washington.'),
                  'software',
                  [u'analysis software', u'software']),
@@ -664,8 +669,8 @@ software_names = TermSet([
                  'software',
                  [u'quantitation software name', u'analysis software', u'software', u'quantification information']),
     SoftwareName(u'IsobariQ', u'MS:1002210',
-                 (u'A quantitative software package designed for analysis of'
-                  u'IPTL, TMT and iTRAQ data." [PMID:21067241,'
+                 (u'A quantitative software package designed for analysis of '
+                  u'IPTL, TMT and iTRAQ data." [PMID:21067241, '
                   u'DOI:10.1021/pr1009977'),
                  'software',
                  [u'quantitation software name', u'analysis software', u'software', u'quantification information']),
@@ -694,7 +699,7 @@ software_names = TermSet([
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'OMSSA', u'MS:1001475',
-                 (u'Open Mass Spectrometry Search Algorithm was used to analyze'
+                 (u'Open Mass Spectrometry Search Algorithm was used to analyze '
                   u'the spectra.'),
                  'software',
                  [u'analysis software', u'software']),
@@ -702,19 +707,36 @@ software_names = TermSet([
                  (u'A library of Java routines for manipulating mzIdentML files.'),
                  'software',
                  [u'analysis software', u'software']),
+    SoftwareName(u'i3tms', u'MS:1003013',
+                 (u'i3-tms search engine and data-analysis software.'),
+                 'software',
+                 [u'analysis software', u'software']),
+    SoftwareName(u'pFind', u'MS:1003011',
+                 (u'Sequence-tag-based search engine pFind.'),
+                 'software',
+                 [u'analysis software', u'software']),
+    SoftwareName(u'MSFragger', u'MS:1003014',
+                 (u'A database search-based peptide identification tool.'),
+                 'software',
+                 [u'analysis software', u'software']),
+    SoftwareName(u'Philosopher', u'MS:1003018',
+                 (u'General proteomics processing toolkit for shotgun '
+                  u'proteomics.'),
+                 'software',
+                 [u'analysis software', u'software']),
     SoftwareName(u'Pepitome', u'MS:1001588',
-                 (u'Tabb Lab software for spectral library searches on tandem'
+                 (u'Tabb Lab software for spectral library searches on tandem '
                   u'mass spectra.'),
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'MaxQuant', u'MS:1001583',
-                 (u'MaxQuant is a quantitative proteomics software package'
-                  u'designed for analyzing large mass spectrometric data sets.'
+                 (u'MaxQuant is a quantitative proteomics software package '
+                  u'designed for analyzing large mass spectrometric data sets. '
                   u'It is specifically aimed at high resolution MS data.'),
                  'software',
                  [u'quantitation software name', u'analysis software', u'software', u'quantification information']),
     SoftwareName(u'Comet', u'MS:1002251',
-                 (u'Comet open-source sequence search engine developed at the'
+                 (u'Comet open-source sequence search engine developed at the '
                   u'University of Washington.'),
                  'software',
                  [u'analysis software', u'software']),
@@ -751,19 +773,19 @@ software_names = TermSet([
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'TopMG', u'MS:1002903',
-                 (u'A mass graph-based approach for the identification of'
-                  u'modified proteoforms using top-down tandem mass spectra."'
+                 (u'A mass graph-based approach for the identification of '
+                  u'modified proteoforms using top-down tandem mass spectra." '
                   u'[PMID:28453668'),
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'TopPIC', u'MS:1002901',
-                 (u'TopPIC: a software tool for top-down mass spectrometry-based'
-                  u'proteoform identification and characterization."'
+                 (u'TopPIC: a software tool for top-down mass spectrometry-based '
+                  u'proteoform identification and characterization." '
                   u'[PMID:27423895'),
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'ProteinExtractor', u'MS:1001487',
-                 (u'An algorithm for protein determination/assembly integrated'
+                 (u'An algorithm for protein determination/assembly integrated '
                   u"into Bruker's ProteinScape."),
                  'software',
                  [u'Bruker software', u'analysis software', u'software']),
@@ -776,22 +798,22 @@ software_names = TermSet([
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'PeptideShaker', u'MS:1002458',
-                 (u'PeptideShaker is a software for the interpretation of'
+                 (u'PeptideShaker is a software for the interpretation of '
                   u'proteomics identification results." [PSI:PI'),
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'TagRecon', u'MS:1001587',
-                 (u'Tabb Lab software for reconciling sequence tags to a protein'
+                 (u'Tabb Lab software for reconciling sequence tags to a protein '
                   u'database.'),
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'DirecTag', u'MS:1001586',
-                 (u'Tabb Lab software for generating sequence tags from tandem'
+                 (u'Tabb Lab software for generating sequence tags from tandem '
                   u'mass spectra.'),
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'MyriMatch', u'MS:1001585',
-                 (u'Tabb Lab software for directly comparing peptides in a'
+                 (u'Tabb Lab software for directly comparing peptides in a '
                   u'database to tandem mass spectra.'),
                  'software',
                  [u'analysis software', u'software']),
@@ -800,24 +822,24 @@ software_names = TermSet([
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'NIST MSPepSearch', u'MS:1002750',
-                 (u'Search tool of the NIST (National Institute of Standards and'
+                 (u'Search tool of the NIST (National Institute of Standards and '
                   u'Technology) for spectral library searches.'),
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'Trans-Proteomic Pipeline', u'MS:1002285',
-                 (u'A suite of open source tools for the processing of MS2'
-                  u'proteomics data developed by the Seattle Proteome Center at'
+                 (u'A suite of open source tools for the processing of MS2 '
+                  u'proteomics data developed by the Seattle Proteome Center at '
                   u'the Institute for Systems Biology.'),
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'Trans-Proteomic Pipeline software', u'MS:1002286',
-                 (u'A software program that is a component of the Trans-'
+                 (u'A software program that is a component of the Trans- '
                   u'Proteomic Pipeline.'),
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'DTASelect', u'MS:1002598',
-                 (u'Analysis software designed to reassemble the SEQUEST peptide'
-                  u'identifications and to highlight the most significant'
+                 (u'Analysis software designed to reassemble the SEQUEST peptide '
+                  u'identifications and to highlight the most significant '
                   u'matches." [PMID:12643522'),
                  'software',
                  [u'analysis software', u'software']),
@@ -830,7 +852,7 @@ software_names = TermSet([
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'Proline', u'MS:1002981',
-                 (u'The Proline software suite for mass spectrometry based'
+                 (u'The Proline software suite for mass spectrometry based '
                   u'proteomics.'),
                  'software',
                  [u'analysis software', u'software']),
@@ -843,17 +865,17 @@ software_names = TermSet([
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'ProLuCID', u'MS:1002596',
-                 (u'The SEQUEST-like sequence search engine ProLuCID, developed'
+                 (u'The SEQUEST-like sequence search engine ProLuCID, developed '
                   u'in the Yates Lab at the Scripps Research Institute.'),
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'xiFDR', u'MS:1002543',
-                 (u'Target/Decoy based FDR estimation for cross-linking peptide-'
+                 (u'Target/Decoy based FDR estimation for cross-linking peptide- '
                   u'identifications.'),
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'Skyline mzQuantML converter', u'MS:1002546',
-                 (u'A software package to convert Skyline report to mzQuantML."'
+                 (u'A software package to convert Skyline report to mzQuantML." '
                   u'[PSI:PI'),
                  'software',
                  [u'quantitation software name', u'analysis software', u'software', u'quantification information']),
@@ -862,7 +884,7 @@ software_names = TermSet([
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'MSPathFinder', u'MS:1002720',
-                 (u'PNNL top-down/bottom-up analysis software for identifying'
+                 (u'PNNL top-down/bottom-up analysis software for identifying '
                   u'peptides and proteoforms in fragmentation mass spectra.'),
                  'software',
                  [u'analysis software', u'software']),
@@ -871,12 +893,12 @@ software_names = TermSet([
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'MS-GF', u'MS:1002047',
-                 (u'MS-GF software used to re-score the peptide-spectrum'
+                 (u'MS-GF software used to re-score the peptide-spectrum '
                   u'matches." [DOI:10.1074/mcp.M110.003731'),
                  'software',
                  [u'analysis software', u'software']),
     SoftwareName(u'ProteinProspector', u'MS:1002043',
-                 (u'ProteinProspector software for data acquisition and'
+                 (u'ProteinProspector software for data acquisition and '
                   u'analysis.'),
                  'software',
                  [u'analysis software', u'software']),
@@ -889,7 +911,7 @@ software_names = TermSet([
                  'software',
                  [u'SCIEX software', u'software']),
     SoftwareName(u'MIDAS Workflow Designer', u'MS:1000673',
-                 (u'Applied Biosystems|MDS SCIEX software for MRM assay'
+                 (u'Applied Biosystems|MDS SCIEX software for MRM assay '
                   u'development.'),
                  'software',
                  [u'SCIEX software', u'software']),
@@ -954,47 +976,47 @@ software_names = TermSet([
                  'software',
                  [u'Bruker software', u'software']),
     SoftwareName(u'Anubis', u'MS:1002410',
-                 (u'Anubis software for selected reaction monitoring data."'
+                 (u'Anubis software for selected reaction monitoring data." '
                   u'[PSI:PI'),
                  'software',
                  [u'SRM software', u'quantitation software name', u'software', u'quantification information']),
     SoftwareName(u'ATAQS', u'MS:1000925',
-                 (u'Software suite used to predict, select, and optimize'
-                  u'transitions as well as analyze the results of selected'
-                  u'reaction monitoring runs developed and distributed by the'
+                 (u'Software suite used to predict, select, and optimize '
+                  u'transitions as well as analyze the results of selected '
+                  u'reaction monitoring runs developed and distributed by the '
                   u'Institute for Systems Biology.'),
                  'software',
                  [u'SRM software', u'software']),
     SoftwareName(u'Skyline', u'MS:1000922',
-                 (u'Software used to predict, select, and optimize transitions'
-                  u'as well as analyze the results of selected reaction'
-                  u'monitoring runs developed and distributed by the MacCoss lab'
-                  u'at the University of Washington." [https://brendanx-uw1.gs.w'
-                  u'ashington.edu/labkey/wiki/home/software/Skyline/page.view?na'
+                 (u'Software used to predict, select, and optimize transitions '
+                  u'as well as analyze the results of selected reaction '
+                  u'monitoring runs developed and distributed by the MacCoss lab '
+                  u'at the University of Washington." [https://brendanx-uw1.gs.w '
+                  u'ashington.edu/labkey/wiki/home/software/Skyline/page.view?na '
                   u'me=defaul'),
                  'software',
                  [u'SRM software', u'quantitation software name', u'software', u'quantification information']),
     SoftwareName(u'TIQAM', u'MS:1000923',
-                 (u'Software used to predict, select, and optimize transitions'
-                  u'for selected reaction monitoring experiments developed and'
+                 (u'Software used to predict, select, and optimize transitions '
+                  u'for selected reaction monitoring experiments developed and '
                   u'distributed by the Institute for Systems Biology.'),
                  'software',
                  [u'SRM software', u'software']),
     SoftwareName(u'MaRiMba', u'MS:1000872',
-                 (u'Software used to predict transitions for selected reaction'
-                  u'monitoring experiments based on observed spectrum libraries'
-                  u'developed and distributed by the Institute for Systems'
+                 (u'Software used to predict transitions for selected reaction '
+                  u'monitoring experiments based on observed spectrum libraries '
+                  u'developed and distributed by the Institute for Systems '
                   u'Biology.'),
                  'software',
                  [u'SRM software', u'software']),
     SoftwareName(u'MRMaid', u'MS:1002220',
-                 (u'A web-based SRM assay design tool whose transitions are'
-                  u'generated by mining the millions of identified peptide'
+                 (u'A web-based SRM assay design tool whose transitions are '
+                  u'generated by mining the millions of identified peptide '
                   u"spectra held in the EBI's PRIDE database."),
                  'software',
                  [u'SRM software', u'software']),
     SoftwareName(u'SSRCalc', u'MS:1000874',
-                 (u'Sequence Specific Retention Calculator estimates the'
+                 (u'Sequence Specific Retention Calculator estimates the '
                   u'retention time of peptides based on their sequence.'),
                  'software',
                  [u'peptide attribute calculation software', u'software']),
@@ -1003,12 +1025,12 @@ software_names = TermSet([
                  'software',
                  [u'quantitation software name', u'TOPP software', u'software', u'quantification information', u'analysis software', u'data processing software']),
     SoftwareName(u'Progenesis LC-MS', u'MS:1001830',
-                 (u'Software from Nonlinear Dynamics for LC-MS label-free'
+                 (u'Software from Nonlinear Dynamics for LC-MS label-free '
                   u'workflow.'),
                  'software',
                  [u'quantitation software name', u'software', u'quantification information']),
     SoftwareName(u'FindPairs', u'MS:1002063',
-                 (u'Software e.g. for SILAC and 14N/15N workflow, part of the'
+                 (u'Software e.g. for SILAC and 14N/15N workflow, part of the '
                   u'PeakQuant suite.'),
                  'software',
                  [u'quantitation software name', u'software', u'quantification information']),
@@ -1017,7 +1039,7 @@ software_names = TermSet([
                  'software',
                  [u'quantitation software name', u'software', u'quantification information']),
     SoftwareName(u'ProteoSuite', u'MS:1002124',
-                 (u'ProteoSuite software for the analysis of quantitative'
+                 (u'ProteoSuite software for the analysis of quantitative '
                   u'proteomics data." [DOI:10.1089/omi.2012.0022, PMID:22804616'),
                  'software',
                  [u'quantitation software name', u'software', u'quantification information']),
@@ -1026,23 +1048,23 @@ software_names = TermSet([
                  'software',
                  [u'quantitation software name', u'software', u'quantification information']),
     SoftwareName(u'ITRAQAnalyzer', u'MS:1002129',
-                 (u'Software for iTRAQ workflow. Extracts and normalizes iTRAQ'
+                 (u'Software for iTRAQ workflow. Extracts and normalizes iTRAQ '
                   u'information from an MS experiment.'),
                  'software',
                  [u'quantitation software name', u'TOPP software', u'software', u'quantification information', u'analysis software', u'data processing software']),
     SoftwareName(u'MALDI Solutions Microbial Identification', u'MS:1001878',
-                 (u'Shimadzu Biotech software for data acquisition, processing,'
+                 (u'Shimadzu Biotech software for data acquisition, processing, '
                   u'and analysis.'),
                  'software',
                  [u'MALDI Solutions', u'acquisition software', u'analysis software', u'data processing software', u'Shimadzu Corporation software', u'software']),
     SoftwareName(u'PRIDE Converter2', u'MS:1002335',
-                 (u'Java software designed to convert one of several proteomics'
+                 (u'Java software designed to convert one of several proteomics '
                   u'identification results formats into PRIDE XML.'),
                  'software',
                  [u'conversion software', u'data processing software', u'software']),
     SoftwareName(u'ProCon', u'MS:1002334',
-                 (u'Java software designed to convert one of several proteomics'
-                  u'identification results formats into mzIdentML or PRIDE XML."'
+                 (u'Java software designed to convert one of several proteomics '
+                  u'identification results formats into mzIdentML or PRIDE XML." '
                   u'[PSI:PI'),
                  'software',
                  [u'conversion software', u'data processing software', u'software']),
@@ -1075,17 +1097,17 @@ software_names = TermSet([
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP IDMerger', u'MS:1002155',
-                 (u'Merges several protein/peptide identification files into one'
+                 (u'Merges several protein/peptide identification files into one '
                   u'file.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP DTAExtractor', u'MS:1002154',
-                 (u'Extracts spectra of an MS run file to several files in DTA'
+                 (u'Extracts spectra of an MS run file to several files in DTA '
                   u'format.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP SpectraMerger', u'MS:1002157',
-                 (u'Merges spectra from an LC/MS map, either by precursor or by'
+                 (u'Merges spectra from an LC/MS map, either by precursor or by '
                   u'RT blocks.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1093,27 +1115,31 @@ software_names = TermSet([
                  (u'Converts identification engine file formats.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
+    SoftwareName(u'OpenPepXL', u'MS:1003023',
+                 (u'Cross-Linking MS search engine.'),
+                 'software',
+                 [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP PrecursorMassCorrector', u'MS:1002160',
                  (u'Correct the precursor entries of tandem MS scans.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP HighResPrecursorMassCorrector', u'MS:1002161',
-                 (u'Performs precursor mz correction on centroided high'
+                 (u'Performs precursor mz correction on centroided high '
                   u'resolution data.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP AdditiveSeries', u'MS:1002162',
-                 (u'Computes an additive series to quantify a peptide in a set'
+                 (u'Computes an additive series to quantify a peptide in a set '
                   u'of samples.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP Decharger', u'MS:1002163',
-                 (u'Decharges and merges different feature charge variants of'
+                 (u'Decharges and merges different feature charge variants of '
                   u'the same chemical entity.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP EICExtractor', u'MS:1002164',
-                 (u'Quantifies signals at given positions in (raw or picked)'
+                 (u'Quantifies signals at given positions in (raw or picked) '
                   u'LC/MS maps.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1122,22 +1148,22 @@ software_names = TermSet([
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP ConsensusID', u'MS:1002188',
-                 (u'Computes a consensus identification from peptide'
+                 (u'Computes a consensus identification from peptide '
                   u'identifications of several identification engines.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP IDConflictResolver', u'MS:1002189',
-                 (u'Resolves ambiguous annotations of features with peptide'
+                 (u'Resolves ambiguous annotations of features with peptide '
                   u'identifications.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP software adaptor', u'MS:1002180',
-                 (u'Software adaptor to an external program in the TOPP'
+                 (u'Software adaptor to an external program in the TOPP '
                   u'software.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP SpecLibSearcher', u'MS:1002187',
-                 (u'Identifies peptide MS2 spectra by spectral matching with a'
+                 (u'Identifies peptide MS2 spectra by spectral matching with a '
                   u'searchable spectral library.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1154,17 +1180,17 @@ software_names = TermSet([
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP ProteinQuantifier', u'MS:1002171',
-                 (u'Computes protein abundances from annotated feature/consensus'
+                 (u'Computes protein abundances from annotated feature/consensus '
                   u'maps.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP CompNovoCID', u'MS:1002179',
-                 (u'Performs a peptide/protein identification with the CompNovo'
+                 (u'Performs a peptide/protein identification with the CompNovo '
                   u'engine in collision-induced dissociation (CID) mode.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP CompNovo', u'MS:1002178',
-                 (u'Performs a peptide/protein identification with the CompNovo'
+                 (u'Performs a peptide/protein identification with the CompNovo '
                   u'engine.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1173,17 +1199,17 @@ software_names = TermSet([
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP FalseDiscoveryRate', u'MS:1002204',
-                 (u'Estimates the false discovery rate on peptide and protein'
+                 (u'Estimates the false discovery rate on peptide and protein '
                   u'level using decoy searches.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP IDMapper', u'MS:1002191',
-                 (u'Assigns protein/peptide identifications to feature or'
+                 (u'Assigns protein/peptide identifications to feature or '
                   u'consensus features.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP IDFilter', u'MS:1002190',
-                 (u'Filters results from protein or peptide identification'
+                 (u'Filters results from protein or peptide identification '
                   u'engines based on different criteria.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1192,12 +1218,12 @@ software_names = TermSet([
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP IDPosteriorErrorProbability', u'MS:1002192',
-                 (u'Estimates posterior error probabilities using a mixture'
+                 (u'Estimates posterior error probabilities using a mixture '
                   u'model.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP PrecursorIonSelector', u'MS:1002195',
-                 (u'A tool for precursor ion selection based on identification'
+                 (u'A tool for precursor ion selection based on identification '
                   u'results.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1210,7 +1236,7 @@ software_names = TermSet([
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP MRMMapper', u'MS:1002196',
-                 (u'MRMMapper maps measured chromatograms (mzML) and the'
+                 (u'MRMMapper maps measured chromatograms (mzML) and the '
                   u'transitions used (TraML).'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1219,7 +1245,7 @@ software_names = TermSet([
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'BaselineFilter', u'MS:1000753',
-                 (u'Removes the baseline from profile spectra using a top-hat'
+                 (u'Removes the baseline from profile spectra using a top-hat '
                   u'filter.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1232,7 +1258,7 @@ software_names = TermSet([
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'FileFilter', u'MS:1000757',
-                 (u'Extracts or manipulates portions of data from peak, feature'
+                 (u'Extracts or manipulates portions of data from peak, feature '
                   u'or consensus feature files.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1269,27 +1295,27 @@ software_names = TermSet([
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'NoiseFilter', u'MS:1000762',
-                 (u'OBSOLETE Removes noise from profile spectra by using'
+                 (u'OBSOLETE Removes noise from profile spectra by using '
                   u'different smoothing techniques.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'PeakPicker', u'MS:1000763',
-                 (u'OBSOLETE Finds mass spectrometric peaks in profile mass'
+                 (u'OBSOLETE Finds mass spectrometric peaks in profile mass '
                   u'spectra.'),
                  'software',
                  [u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'ProteoWizard SeeMS', u'MS:1002209',
-                 (u'An interactive GUI application to view and filter mass'
+                 (u'An interactive GUI application to view and filter mass '
                   u'spectrometry data in a variety of formats.'),
                  'software',
                  [u'ProteoWizard software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'ProteoWizard msaccess', u'MS:1002208',
-                 (u'Filters, processes, and displays mass spectrometry data in a'
+                 (u'Filters, processes, and displays mass spectrometry data in a '
                   u'variety of ways.'),
                  'software',
                  [u'ProteoWizard software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'ProteoWizard msconvert', u'MS:1002205',
-                 (u'Converts, filters, and processes mass spectrometry data in'
+                 (u'Converts, filters, and processes mass spectrometry data in '
                   u'variety of formats.'),
                  'software',
                  [u'ProteoWizard software', u'analysis software', u'data processing software', u'software']),
@@ -1298,7 +1324,7 @@ software_names = TermSet([
                  'software',
                  [u'ProteoWizard software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'ProteoWizard idconvert', u'MS:1002206',
-                 (u'Converts, filters, and processes identifications from'
+                 (u'Converts, filters, and processes identifications from '
                   u'shotgun proteomics experiments.'),
                  'software',
                  [u'ProteoWizard software', u'analysis software', u'data processing software', u'software']),
@@ -1311,7 +1337,7 @@ software_names = TermSet([
                  'software',
                  [u'mzidLib', u'analysis software', u'software']),
     SoftwareName(u'mzidLib:Csv2Mzid', u'MS:1002240',
-                 (u'A converter for CSV files (following OMSSA CSV style) to'
+                 (u'A converter for CSV files (following OMSSA CSV style) to '
                   u'mzIdentML.'),
                  'software',
                  [u'mzidLib', u'analysis software', u'software']),
@@ -1320,35 +1346,35 @@ software_names = TermSet([
                  'software',
                  [u'mzidLib', u'analysis software', u'software']),
     SoftwareName(u'mzidLib:FalseDiscoveryRate', u'MS:1002244',
-                 (u'A routine for calculating local FDR, q-value and FDRScore'
+                 (u'A routine for calculating local FDR, q-value and FDRScore '
                   u'for mzIdentML files, based on a decoy search.'),
                  'software',
                  [u'mzidLib', u'analysis software', u'software']),
     SoftwareName(u'mzidLib:InsertMetaDataFromFasta', u'MS:1002247',
-                 (u'A tool for adding additional meta data from a FASTA file to'
-                  u'DBSequence entries (sequence and description) in mzIdentML'
+                 (u'A tool for adding additional meta data from a FASTA file to '
+                  u'DBSequence entries (sequence and description) in mzIdentML '
                   u'files.'),
                  'software',
                  [u'mzidLib', u'analysis software', u'software']),
     SoftwareName(u'mzidLib:CombineSearchEngines', u'MS:1002246',
-                 (u'A tool for combining results analysed in parallel in two or'
+                 (u'A tool for combining results analysed in parallel in two or '
                   u'three search engines into a single mzIdentML file.'),
                  'software',
                  [u'mzidLib', u'analysis software', u'software']),
     SoftwareName(u'mzidLib:ProteoGrouper', u'MS:1002241',
-                 (u'A generic and parameterizable protein inference algorithm'
+                 (u'A generic and parameterizable protein inference algorithm '
                   u'for mzIdentML files.'),
                  'software',
                  [u'mzidLib', u'analysis software', u'software']),
     SoftwareName(u'mzidLib:Perform emPAI on mzid', u'MS:1002243',
-                 (u'A routine for adding emPAI quantitative values to an'
+                 (u'A routine for adding emPAI quantitative values to an '
                   u'mzIdentML file.'),
                  'software',
                  [u'mzidLib', u'analysis software', u'software']),
     SoftwareName(u'mzidLib:Thresholder', u'MS:1002242',
-                 (u'A routine for keeping only identifications passing a given'
-                  u'threshold or setting passThreshold to true or false for'
-                  u'SpectrumIdentificationItem or ProteinDetectionHypothesis in'
+                 (u'A routine for keeping only identifications passing a given '
+                  u'threshold or setting passThreshold to true or false for '
+                  u'SpectrumIdentificationItem or ProteinDetectionHypothesis in '
                   u'mzIdentML files.'),
                  'software',
                  [u'mzidLib', u'analysis software', u'software']),
@@ -1357,7 +1383,7 @@ software_names = TermSet([
                  'software',
                  [u'small molecule analysis software', u'analysis software', u'software']),
     SoftwareName(u'Progenesis QI', u'MS:1002879',
-                 (u'Metabolomics analysis software for LC-MS data from Nonlinear'
+                 (u'Metabolomics analysis software for LC-MS data from Nonlinear '
                   u'Dynamics.'),
                  'software',
                  [u'small molecule analysis software', u'analysis software', u'software']),
@@ -1366,62 +1392,62 @@ software_names = TermSet([
                  'software',
                  [u'small molecule analysis software', u'analysis software', u'software']),
     SoftwareName(u'Compound Discoverer', u'MS:1002880',
-                 (u'Metabolomics analysis software from Thermo Fisher'
+                 (u'Metabolomics analysis software from Thermo Fisher '
                   u'Scientific.'),
                  'software',
                  [u'small molecule analysis software', u'analysis software', u'software']),
     SoftwareName(u'ASAPRatio', u'MS:1002574',
-                 (u'A program in the TPP that calculates PSM, peptide, and'
-                  u'protein-level abundances based on 2-channel isotope-labelled'
+                 (u'A program in the TPP that calculates PSM, peptide, and '
+                  u'protein-level abundances based on 2-channel isotope-labelled '
                   u'data such as ICAT, SILAC, etc.'),
                  'software',
                  [u'Trans-Proteomic Pipeline software', u'analysis software', u'software']),
     SoftwareName(u'PTMProphet', u'MS:1002292',
-                 (u'A program in the TPP that calculates PTM localization'
-                  u'probabilities by re-analyzing the peaks that are available'
+                 (u'A program in the TPP that calculates PTM localization '
+                  u'probabilities by re-analyzing the peaks that are available '
                   u'to distinguish between possible modification sites.'),
                  'software',
                  [u'Trans-Proteomic Pipeline software', u'analysis software', u'software']),
     SoftwareName(u'XPRESS', u'MS:1002290',
-                 (u'A program in the TPP that calculates PSM-level abundances'
-                  u'based on 2-channel isotope-labelled data such as ICAT,'
+                 (u'A program in the TPP that calculates PSM-level abundances '
+                  u'based on 2-channel isotope-labelled data such as ICAT, '
                   u'SILAC, etc.'),
                  'software',
                  [u'Trans-Proteomic Pipeline software', u'analysis software', u'software']),
     SoftwareName(u'Libra', u'MS:1002291',
-                 (u'A program in the TPP that calculates PSM, peptide, and'
-                  u'protein-level abundances based on N-channel isobaric label'
+                 (u'A program in the TPP that calculates PSM, peptide, and '
+                  u'protein-level abundances based on N-channel isobaric label '
                   u'peptide data such as iTRAQ, TMT, etc.'),
                  'software',
                  [u'Trans-Proteomic Pipeline software', u'analysis software', u'software']),
     SoftwareName(u'PeptideProphet', u'MS:1002287',
-                 (u'A program in the TPP that calculates PSM probabilities for'
-                  u'MS2 proteomics data searched with any of the supported'
-                  u'sequence or spectral library search engines via the pepXML'
+                 (u'A program in the TPP that calculates PSM probabilities for '
+                  u'MS2 proteomics data searched with any of the supported '
+                  u'sequence or spectral library search engines via the pepXML '
                   u'format." [PMID:12403597'),
                  'software',
                  [u'Trans-Proteomic Pipeline software', u'analysis software', u'software']),
     SoftwareName(u'ProteinProphet', u'MS:1002289',
-                 (u'A program in the TPP that calculates protein-level'
-                  u'probabilities based on input PSM or peptide-level'
-                  u'probabilities from PeptideProphet or iProphet. The output is'
+                 (u'A program in the TPP that calculates protein-level '
+                  u'probabilities based on input PSM or peptide-level '
+                  u'probabilities from PeptideProphet or iProphet. The output is '
                   u'written in the protXML format.'),
                  'software',
                  [u'Trans-Proteomic Pipeline software', u'analysis software', u'software']),
     SoftwareName(u'iProphet', u'MS:1002288',
-                 (u'A program in the TPP that calculates distinct peptide'
-                  u'probabilities based on several lines of corroborating'
-                  u'evidence including search results from multiple search'
+                 (u'A program in the TPP that calculates distinct peptide '
+                  u'probabilities based on several lines of corroborating '
+                  u'evidence including search results from multiple search '
                   u'engines via the pepXML format.'),
                  'software',
                  [u'Trans-Proteomic Pipeline software', u'analysis software', u'software']),
     SoftwareName(u'TOPP NoiseFilterSGolay', u'MS:1002133',
-                 (u'Removes noise from profile spectra by using a Savitzky-Golay'
+                 (u'Removes noise from profile spectra by using a Savitzky-Golay '
                   u'smoothing.'),
                  'software',
                  [u'TOPP noise filter', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP NoiseFilterGaussian', u'MS:1002132',
-                 (u'Removes noise from profile spectra by using a gaussian'
+                 (u'Removes noise from profile spectra by using a gaussian '
                   u'smoothing.'),
                  'software',
                  [u'TOPP noise filter', u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1430,32 +1456,32 @@ software_names = TermSet([
                  'software',
                  [u'TOPP spectra filter', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP SpectraFilterBernNorm', u'MS:1002138',
-                 (u'Applies a Bern et al normalization to peak spectra."'
+                 (u'Applies a Bern et al normalization to peak spectra." '
                   u'[PMID:15262780'),
                  'software',
                  [u'TOPP spectra filter', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP SpectraFilterWindowMower', u'MS:1002146',
-                 (u'Applies a filter of the largest peaks in a sliding window'
+                 (u'Applies a filter of the largest peaks in a sliding window '
                   u'over a peak spectrum.'),
                  'software',
                  [u'TOPP spectra filter', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP SpectraFilterSqrtMower', u'MS:1002144',
-                 (u'Applies a filter to peak spectra after intensity scaling to'
+                 (u'Applies a filter to peak spectra after intensity scaling to '
                   u'the square root.'),
                  'software',
                  [u'TOPP spectra filter', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP SpectraFilterThresholdMower', u'MS:1002145',
-                 (u'Applies a filter of peaks below a given threshold to peak'
+                 (u'Applies a filter of peaks below a given threshold to peak '
                   u'spectra.'),
                  'software',
                  [u'TOPP spectra filter', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP SpectraFilterParentPeakMower', u'MS:1002142',
-                 (u'Filters putative unfragmented precursor ions from tandem'
+                 (u'Filters putative unfragmented precursor ions from tandem '
                   u'spectra.'),
                  'software',
                  [u'TOPP spectra filter', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP SpectraFilterScaler', u'MS:1002143',
-                 (u'Applies a filter to peak spectra after intensity scaling'
+                 (u'Applies a filter to peak spectra after intensity scaling '
                   u'according to rank.'),
                  'software',
                  [u'TOPP spectra filter', u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1464,32 +1490,32 @@ software_names = TermSet([
                  'software',
                  [u'TOPP spectra filter', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP SpectraFilterNormalizer', u'MS:1002141',
-                 (u'Applies a TIC/maximal intensity normalization to peak'
+                 (u'Applies a TIC/maximal intensity normalization to peak '
                   u'spectra.'),
                  'software',
                  [u'TOPP spectra filter', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP PeakPickerWavelet', u'MS:1002136',
-                 (u'Finds mass spectrometric peaks with a wavelet algorithm in'
+                 (u'Finds mass spectrometric peaks with a wavelet algorithm in '
                   u'low-resoluted profile mass spectra.'),
                  'software',
                  [u'TOPP peak picker', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP PeakPickerHiRes', u'MS:1002135',
-                 (u'Finds mass spectrometric peaks in high-resoluted profile'
+                 (u'Finds mass spectrometric peaks in high-resoluted profile '
                   u'mass spectra.'),
                  'software',
                  [u'TOPP peak picker', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP MapAlignerIdentification', u'MS:1002148',
-                 (u'Corrects retention time distortions between maps based on'
+                 (u'Corrects retention time distortions between maps based on '
                   u'common peptide identifications.'),
                  'software',
                  [u'TOPP map aligner', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP MapAlignerPoseClustering', u'MS:1002149',
-                 (u'Corrects retention time distortions between maps using a'
+                 (u'Corrects retention time distortions between maps using a '
                   u'pose clustering approach.'),
                  'software',
                  [u'TOPP map aligner', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP MapAlignerSpectrum', u'MS:1002150',
-                 (u'Corrects retention time distortions between maps by spectrum'
+                 (u'Corrects retention time distortions between maps by spectrum '
                   u'alignment.'),
                  'software',
                  [u'TOPP map aligner', u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1502,12 +1528,12 @@ software_names = TermSet([
                  'software',
                  [u'TOPP feature finder', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP FeatureFinderIsotopeWavelet', u'MS:1002168',
-                 (u'Detects two-dimensional features in uncentroided LC-MS data'
+                 (u'Detects two-dimensional features in uncentroided LC-MS data '
                   u'with a wavelet algorithm.'),
                  'software',
                  [u'TOPP feature finder', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP FeatureFinderMetabo', u'MS:1002169',
-                 (u'Detects two-dimensional features in centroided LC-MS data of'
+                 (u'Detects two-dimensional features in centroided LC-MS data of '
                   u'metabolites.'),
                  'software',
                  [u'TOPP feature finder', u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1520,7 +1546,7 @@ software_names = TermSet([
                  'software',
                  [u'TOPP software adaptor', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP MascotAdapterOnline', u'MS:1002183',
-                 (u'Identifies MS2 spectra using the online version of the'
+                 (u'Identifies MS2 spectra using the online version of the '
                   u'external program Mascot.'),
                  'software',
                  [u'TOPP software adaptor', u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1541,7 +1567,7 @@ software_names = TermSet([
                  'software',
                  [u'TOPP software adaptor', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP FeatureLinkerUnlabeledQT', u'MS:1002177',
-                 (u'Groups corresponding features from multiple maps using a'
+                 (u'Groups corresponding features from multiple maps using a '
                   u'quality threshold clustering approach.'),
                  'software',
                  [u'TOPP feature linker', u'TOPP software', u'analysis software', u'data processing software', u'software']),
@@ -1550,22 +1576,22 @@ software_names = TermSet([
                  'software',
                  [u'TOPP feature linker', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP FeatureLinkerLabeled', u'MS:1002175',
-                 (u'Groups corresponding isotope-labeled features in a feature'
+                 (u'Groups corresponding isotope-labeled features in a feature '
                   u'map.'),
                  'software',
                  [u'TOPP feature linker', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP OpenSwathFeatureXMLToTSV', u'MS:1002201',
-                 (u'Converts a featureXML to a mProphet tsv (tab separated'
+                 (u'Converts a featureXML to a mProphet tsv (tab separated '
                   u'values).'),
                  'software',
                  [u'TOPP OpenSwath component', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP OpenSwathDecoyGenerator', u'MS:1002200',
-                 (u'Generates decoys according to different models for a'
+                 (u'Generates decoys according to different models for a '
                   u'specific TraML.'),
                  'software',
                  [u'TOPP OpenSwath component', u'TOPP software', u'analysis software', u'data processing software', u'software']),
     SoftwareName(u'TOPP OpenSwathRTNormalizer', u'MS:1002202',
-                 (u'Generates a transformation file for retention time space'
+                 (u'Generates a transformation file for retention time space '
                   u'into normalized space.'),
                  'software',
                  [u'TOPP OpenSwath component', u'TOPP software', u'analysis software', u'data processing software', u'software']),

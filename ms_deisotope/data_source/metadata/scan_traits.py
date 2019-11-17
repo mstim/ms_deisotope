@@ -166,7 +166,8 @@ class ScanAcquisitionInformation(MutableSequence):
             The event to insert
         """
         if not isinstance(value, ScanEventInformation):
-            raise TypeError("Expected ScanEventInformation but got %r" % (type(value), ))
+            raise TypeError(
+                "Expected ScanEventInformation but got %r" % (type(value), ))
         self.scan_list.insert(index, value)
 
     def __len__(self):
@@ -188,7 +189,8 @@ class ScanAcquisitionInformation(MutableSequence):
 
 class ScanEventInformation(object):
 
-    __slots__ = ("start_time", "window_list", "drift_time", "injection_time", "traits")
+    __slots__ = ("start_time", "window_list",
+                 "drift_time", "injection_time", "traits")
 
     @property
     def __dict__(self):
@@ -299,13 +301,13 @@ scan_attributes = TermSet([
                   'scan attribute',
                   [u'scan attribute', u'PSM-level attribute', u'object attribute', u'single identification result attribute', u'identification attribute', u'analysis attribute', u'spectrum identification result details']),
     ScanAttribute(u'mass resolution', u'MS:1000011',
-                  (u'Smallest mass difference between two equal magnitude peaks'
-                   u'so that the valley between them is a specified fraction of'
+                  (u'Smallest mass difference between two equal magnitude peaks '
+                   u'so that the valley between them is a specified fraction of '
                    u'the peak height.'),
                   'scan attribute',
                   [u'scan attribute', u'object attribute']),
     ScanAttribute(u'scan start time', u'MS:1000016',
-                  (u'The time that an analyzer started a scan, relative to the'
+                  (u'The time that an analyzer started a scan, relative to the '
                    u'start of the MS run.'),
                   'scan attribute',
                   [u'scan attribute', u'PSM-level attribute', u'object attribute', u'single identification result attribute', u'identification attribute', u'analysis attribute', u'spectrum identification result details']),
@@ -314,21 +316,21 @@ scan_attributes = TermSet([
                   'scan attribute',
                   [u'scan attribute', u'object attribute']),
     ScanAttribute(u'elution time', u'MS:1000826',
-                  (u'The time of elution from all used chromatographic columns'
-                   u'(one or more) in the chromatographic separation step,'
+                  (u'The time of elution from all used chromatographic columns '
+                   u'(one or more) in the chromatographic separation step, '
                    u'relative to the start of the chromatography.'),
                   'scan attribute',
                   [u'scan attribute', u'object attribute']),
     ScanAttribute(u'mass resolving power', u'MS:1000800',
-                  (u'The observed mass divided by the difference between two'
-                   u'masses that can be separated: m/dm. The procedure by which'
-                   u'dm was obtained and the mass at which the measurement was'
+                  (u'The observed mass divided by the difference between two '
+                   u'masses that can be separated: m/dm. The procedure by which '
+                   u'dm was obtained and the mass at which the measurement was '
                    u'made should be reported.'),
                   'scan attribute',
                   [u'scan attribute', u'object attribute']),
     ScanAttribute(u'analyzer scan offset', u'MS:1000803',
-                  (u'Offset between two analyzers in a constant neutral loss or'
-                   u'neutral gain scan. The value corresponds to the neutral loss'
+                  (u'Offset between two analyzers in a constant neutral loss or '
+                   u'neutral gain scan. The value corresponds to the neutral loss '
                    u'or neutral gain value.'),
                   'scan attribute',
                   [u'scan attribute', u'object attribute']),
@@ -337,12 +339,12 @@ scan_attributes = TermSet([
                   'scan attribute',
                   [u'scan attribute', u'object attribute']),
     ScanAttribute(u'instrument specific scan attribute', u'MS:1002527',
-                  (u'Instrument specific scan properties that are associated with'
+                  (u'Instrument specific scan properties that are associated with '
                    u'a value.'),
                   'scan attribute',
                   [u'scan attribute', u'object attribute']),
     ScanAttribute(u'interchannel delay', u'MS:1000880',
-                  (u'The duration of intervals between scanning, during which the'
+                  (u'The duration of intervals between scanning, during which the '
                    u'instrument configuration is switched.'),
                   'scan attribute',
                   [u'scan attribute', u'object attribute']),
@@ -351,51 +353,51 @@ scan_attributes = TermSet([
                   'scan attribute',
                   [u'scan attribute', u'object attribute']),
     ScanAttribute(u'filter string', u'MS:1000512',
-                  (u'A string unique to Thermo instrument describing instrument'
+                  (u'A string unique to Thermo instrument describing instrument '
                    u'settings for the scan.'),
                   'scan attribute',
                   [u'scan attribute', u'object attribute']),
     ScanAttribute(u'preset scan configuration', u'MS:1000616',
-                  (u'A user-defined scan configuration that specifies the'
-                   u'instrumental settings in which a spectrum is acquired. An'
-                   u'instrument may cycle through a list of preset scan'
-                   u'configurations to acquire data. This is a more generic term'
-                   u'for the Thermo \\"scan event\\", which is defined in the'
-                   u'Thermo Xcalibur glossary as: a mass spectrometer scan that'
-                   u'is defined by choosing the necessary scan parameter'
-                   u'settings. Multiple scan events can be defined for each'
+                  (u'A user-defined scan configuration that specifies the '
+                   u'instrumental settings in which a spectrum is acquired. An '
+                   u'instrument may cycle through a list of preset scan '
+                   u'configurations to acquire data. This is a more generic term '
+                   u'for the Thermo \\"scan event\\", which is defined in the '
+                   u'Thermo Xcalibur glossary as: a mass spectrometer scan that '
+                   u'is defined by choosing the necessary scan parameter '
+                   u'settings. Multiple scan events can be defined for each '
                    u'segment of time.'),
                   'scan attribute',
                   [u'scan attribute', u'object attribute']),
     ScanAttribute(u'second column elution time', u'MS:1002083',
-                  (u'The time of elution from the second chromatographic column'
-                   u'in the chromatographic separation step, relative to the'
+                  (u'The time of elution from the second chromatographic column '
+                   u'in the chromatographic separation step, relative to the '
                    u'start of the chromatography on the second column.'),
                   'scan attribute',
                   [u'scan attribute', u'object attribute']),
     ScanAttribute(u'first column elution time', u'MS:1002082',
-                  (u'The time of elution from the first chromatographic column in'
-                   u'the chromatographic separation step, relative to the start'
+                  (u'The time of elution from the first chromatographic column in '
+                   u'the chromatographic separation step, relative to the start '
                    u'of chromatography on the first column.'),
                   'scan attribute',
                   [u'scan attribute', u'object attribute']),
     ScanAttribute(u'inverse reduced ion mobility', u'MS:1002815',
-                  (u'Ion mobility measurement for an ion or spectrum of ions as'
-                   u'measured in an ion mobility mass spectrometer. This might'
-                   u'refer to the central value of a bin into which all ions'
+                  (u'Ion mobility measurement for an ion or spectrum of ions as '
+                   u'measured in an ion mobility mass spectrometer. This might '
+                   u'refer to the central value of a bin into which all ions '
                    u'within a narrow range of mobilities have been aggregated.'),
                   'scan attribute',
                   [u'ion selection attribute', u'ion mobility attribute', u'object attribute', u'scan attribute', u'PSM-level attribute', u'single identification result attribute', u'identification attribute', u'analysis attribute', u'spectrum identification result details']),
     ScanAttribute(u'ion mobility drift time', u'MS:1002476',
-                  (u'Drift time of an ion or spectrum of ions as measured in an'
-                   u'ion mobility mass spectrometer. This time might refer to the'
-                   u'central value of a bin into which all ions within a narrow'
+                  (u'Drift time of an ion or spectrum of ions as measured in an '
+                   u'ion mobility mass spectrometer. This time might refer to the '
+                   u'central value of a bin into which all ions within a narrow '
                    u'range of drift time have been aggregated.'),
                   'scan attribute',
                   [u'ion selection attribute', u'ion mobility attribute', u'object attribute', u'scan attribute', u'PSM-level attribute', u'single identification result attribute', u'identification attribute', u'analysis attribute', u'spectrum identification result details']),
     ScanAttribute(u'FAIMS compensation voltage', u'MS:1001581',
-                  (u'The DC potential applied to the asymmetric waveform in FAIMS'
-                   u'that compensates for the difference between high and low'
+                  (u'The DC potential applied to the asymmetric waveform in FAIMS '
+                   u'that compensates for the difference between high and low '
                    u'field mobility of an ion.'),
                   'scan attribute',
                   [u'ion mobility attribute', u'scan attribute', u'PSM-level attribute', u'object attribute', u'single identification result attribute', u'identification attribute', u'analysis attribute', u'spectrum identification result details']),

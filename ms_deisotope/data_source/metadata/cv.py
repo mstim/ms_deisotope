@@ -286,6 +286,9 @@ def render_list(seed, list_name=None, term_cls_name="Term", writer=None):  # pra
 
     def _wraplines(text, width=60, indent='        '):
         lines = textwrap.wrap(text, width=60)
+        n_lines = len(lines)
+        for i in range(n_lines - 1):
+            lines[i] = lines[i] + ' '
         lines = map(repr, lines)
         return indent[:-1] + '(' + ('\n' + indent).join(lines) + ')'
 

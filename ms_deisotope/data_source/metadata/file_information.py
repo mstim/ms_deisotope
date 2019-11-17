@@ -31,8 +31,34 @@ class IDFormat(Term):
 
     A :class:`IDFormat` is equal to its name and its controlled
     vocabulary identifier.
+
+    Attributes
+    ----------
+    parser: NativeIDParser
+        A parser for the specified nativeID format type.
     """
-    pass
+
+    def __init__(self, name, id, description, category, specialization):
+        super(IDFormat, self).__init__(name, id, description, category, specialization)
+        self.parser = NativeIDParser.from_term(self)
+
+    def parse(self, text):
+        """Parse a string looking for fields defined by this term's nativeID
+        format
+
+        Parameters
+        ----------
+        text : str
+            The string to parse
+
+        Returns
+        -------
+        dict:
+            The parsed fields of the ID string.
+        """
+        if self.parser is None:
+            raise ValueError("This IDFormat instance doesn't have a NativeIDParser associated with it!")
+        return self.parser.search(text)
 
 
 class FileFormat(Term):
@@ -75,20 +101,12 @@ xsd_to_type = {
 }
 
 
-def build_parser(term):
-    parser = None
-    if "Native format defined by" in term.description:
-        tokens = []
-        desc = term.description.split(
-            "Native format defined by", 1)[1].rstrip()
-        for mat in type_pat.finditer(desc):
-            tokens.append(mat.groups())
-        parser = re.compile(
-            ''.join([r"(%s)=%s\s?" % (k, xsd_to_regex[v]) for k, v in tokens]))
-    return parser
-
-
 class NativeIDParser(object):
+    """A parser for a single nativeID format.
+
+    These may be automatically derived from the CV-param defining them by parsing the
+    XSD string included, but no guarantee is available.
+    """
     def __init__(self, parser, tokens):
         self.parser = parser
         self.tokens = OrderedDict(tokens)
@@ -126,33 +144,6 @@ class NativeIDParser(object):
         return fields
 
 
-class ScanID(str):
-    __slots__ = ()
-
-    def _parse(self):
-        match = self.parser.search(self)
-        if match is None:
-            return {}
-        groups = match.groups()
-        n = len(groups)
-        i = 0
-        fields = {}
-        while i < n:
-            k = groups[i]
-            v = groups[i + 1]
-            i += 2
-            try:
-                v = int(v)
-            except ValueError:
-                pass
-            fields[k] = v
-        return fields
-
-    @property
-    def fields(self):
-        return self._parse()
-
-
 id_formats = []
 
 # [[[cog
@@ -179,14 +170,14 @@ id_formats = TermSet([
              'native spectrum identifier format',
              [u'native spectrum identifier format', u'spectra data details', u'search input details']),
     IDFormat(u'Bruker U2 nativeID format', u'MS:1000823',
-             (u'Native format defined by declaration=xsd:nonNegativeInteger'
-              u'collection=xsd:nonNegativeInteger'
+             (u'Native format defined by declaration=xsd:nonNegativeInteger '
+              u'collection=xsd:nonNegativeInteger '
               u'scan=xsd:nonNegativeInteger.'),
              'native spectrum identifier format',
              [u'native spectrum identifier format']),
     IDFormat(u'no nativeID format', u'MS:1000824',
-             (u'No nativeID format indicates that the file tagged with this'
-              u'term does not contain spectra that can have a nativeID'
+             (u'No nativeID format indicates that the file tagged with this '
+              u'term does not contain spectra that can have a nativeID '
               u'format.'),
              'native spectrum identifier format',
              [u'native spectrum identifier format']),
@@ -199,18 +190,18 @@ id_formats = TermSet([
              'native spectrum identifier format',
              [u'native spectrum identifier format']),
     IDFormat(u'Shimadzu Biotech nativeID format', u'MS:1000929',
-             (u'Native format defined by source=xsd:string'
+             (u'Native format defined by source=xsd:string '
               u'start=xsd:nonNegativeInteger end=xsd:nonNegativeInteger.'),
              'native spectrum identifier format',
              [u'native spectrum identifier format']),
     IDFormat(u'UIMF nativeID format', u'MS:1002532',
-             (u'Native format defined by frame=xsd:nonNegativeInteger'
-              u'scan=xsd:nonNegativeInteger'
+             (u'Native format defined by frame=xsd:nonNegativeInteger '
+              u'scan=xsd:nonNegativeInteger '
               u'frameType=xsd:nonNegativeInteger.'),
              'native spectrum identifier format',
              [u'native spectrum identifier format']),
     IDFormat(u'Bruker TDF nativeID format', u'MS:1002818',
-             (u'Native format defined by frame=xsd:nonNegativeInteger'
+             (u'Native format defined by frame=xsd:nonNegativeInteger '
               u'scan=xsd:nonNegativeInteger.'),
              'native spectrum identifier format',
              [u'native spectrum identifier format']),
@@ -219,19 +210,19 @@ id_formats = TermSet([
              'native spectrum identifier format',
              [u'native spectrum identifier format']),
     IDFormat(u'SCIEX TOF/TOF nativeID format', u'MS:1001480',
-             (u'Native format defined by jobRun=xsd:nonNegativeInteger'
+             (u'Native format defined by jobRun=xsd:nonNegativeInteger '
               u'spotLabel=xsd:string spectrum=xsd:nonNegativeInteger.'),
              'native spectrum identifier format',
              [u'native spectrum identifier format']),
     IDFormat(u'Thermo nativeID format', u'MS:1000768',
-             (u'Native format defined by'
-              u'controllerType=xsd:nonNegativeInteger'
-              u'controllerNumber=xsd:positiveInteger'
+             (u'Native format defined by '
+              u'controllerType=xsd:nonNegativeInteger '
+              u'controllerNumber=xsd:positiveInteger '
               u'scan=xsd:positiveInteger.'),
              'native spectrum identifier format',
              [u'native spectrum identifier format']),
     IDFormat(u'Waters nativeID format', u'MS:1000769',
-             (u'Native format defined by function=xsd:positiveInteger'
+             (u'Native format defined by function=xsd:positiveInteger '
               u'process=xsd:nonNegativeInteger scan=xsd:nonNegativeInteger.'),
              'native spectrum identifier format',
              [u'native spectrum identifier format']),
@@ -252,8 +243,8 @@ id_formats = TermSet([
              'native spectrum identifier format',
              [u'native spectrum identifier format']),
     IDFormat(u'WIFF nativeID format', u'MS:1000770',
-             (u'Native format defined by sample=xsd:nonNegativeInteger'
-              u'period=xsd:nonNegativeInteger cycle=xsd:nonNegativeInteger'
+             (u'Native format defined by sample=xsd:nonNegativeInteger '
+              u'period=xsd:nonNegativeInteger cycle=xsd:nonNegativeInteger '
               u'experiment=xsd:nonNegativeInteger.'),
              'native spectrum identifier format',
              [u'native spectrum identifier format']),
@@ -291,8 +282,8 @@ file_formats = []
 # ]]]
 file_formats = TermSet([
     FileFormat(u'Agilent MassHunter format', u'MS:1001509',
-               (u'A data file format found in an Agilent MassHunter directory'
-                u'which contains raw data acquired by an Agilent mass'
+               (u'A data file format found in an Agilent MassHunter directory '
+                u'which contains raw data acquired by an Agilent mass '
                 u'spectrometer.'),
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
@@ -313,7 +304,7 @@ file_formats = TermSet([
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
     FileFormat(u'Andi-MS format', u'MS:1002441',
-               (u'AIA Analytical Data Interchange file format for mass'
+               (u'AIA Analytical Data Interchange file format for mass '
                 u'spectrometry data.'),
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
@@ -326,7 +317,7 @@ file_formats = TermSet([
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
     FileFormat(u'MS2 format', u'MS:1001466',
-               (u'MS2 file format for MS2 spectral data." [PMID:15317041,'
+               (u'MS2 file format for MS2 spectral data." [PMID:15317041, '
                 u'DOI:10.1002/rcm.1603'),
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
@@ -359,8 +350,8 @@ file_formats = TermSet([
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
     FileFormat(u'UIMF format', u'MS:1002531',
-               (u'SQLite-based file format created at Pacific Northwest'
-                u'National Lab. It stores an intermediate analysis of ion-'
+               (u'SQLite-based file format created at Pacific Northwest '
+                u'National Lab. It stores an intermediate analysis of ion- '
                 u'mobility mass spectrometry data.'),
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
@@ -369,7 +360,7 @@ file_formats = TermSet([
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
     FileFormat(u'Waters raw format', u'MS:1000526',
-               (u'Waters data file format found in a Waters RAW directory,'
+               (u'Waters data file format found in a Waters RAW directory, '
                 u'generated from an MS acquisition.'),
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
@@ -394,7 +385,7 @@ file_formats = TermSet([
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'intermediate analysis format', u'file format']),
     FileFormat(u'parameter file', u'MS:1000740',
-               (u'Parameter file used to configure the acquisition of raw data'
+               (u'Parameter file used to configure the acquisition of raw data '
                 u'on the instrument.'),
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
@@ -427,7 +418,7 @@ file_formats = TermSet([
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
     FileFormat(u'SCIEX TOF/TOF database', u'MS:1001481',
-               (u'Applied Biosystems/MDS Analytical Technologies TOF/TOF'
+               (u'Applied Biosystems/MDS Analytical Technologies TOF/TOF '
                 u'instrument database.'),
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
@@ -440,12 +431,12 @@ file_formats = TermSet([
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
     FileFormat(u'text format', u'MS:1001369',
-               (u'Simple text file format of \\"m/z [intensity]\\" values for a'
+               (u'Simple text file format of \\"m/z [intensity]\\" values for a '
                 u'PMF (or single MS2) search.'),
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
     FileFormat(u'SCIEX TOF/TOF T2D format', u'MS:1001560',
-               (u'Applied Biosystems/MDS Analytical Technologies TOF/TOF'
+               (u'Applied Biosystems/MDS Analytical Technologies TOF/TOF '
                 u'instrument export format.'),
                'mass spectrometer file format',
                [u'mass spectrometer file format', u'file format']),
@@ -475,174 +466,165 @@ content_keys = []
 # ]]]
 content_keys = TermSet([
     FileContent(u'electromagnetic radiation spectrum', u'MS:1000804',
-                (u'A plot of the relative intensity of electromagnetic'
+                (u'A plot of the relative intensity of electromagnetic '
                  u'radiation as a function of the wavelength.'),
                 'data file content',
                 [u'data file content', u'spectrum type']),
     FileContent(u'absorption spectrum', u'MS:1000806',
-                (u'A plot of the relative intensity of electromagnetic'
+                (u'A plot of the relative intensity of electromagnetic '
                  u'radiation absorbed by atoms or molecules when excited.'),
                 'data file content',
                 [u'data file content', u'spectrum type']),
     FileContent(u'emission spectrum', u'MS:1000805',
-                (u'A plot of the relative intensity of electromagnetic'
+                (u'A plot of the relative intensity of electromagnetic '
                  u'radiation emitted by atoms or molecules when excited.'),
                 'data file content',
                 [u'data file content', u'spectrum type']),
     FileContent(u'mass spectrum', u'MS:1000294',
-                (u'A plot of the relative abundance of a beam or other'
-                 u'collection of ions as a function of the mass-to-charge ratio'
+                (u'A plot of the relative abundance of a beam or other '
+                 u'collection of ions as a function of the mass-to-charge ratio '
                  u'(m/z).'),
                 'data file content',
                 [u'data file content', u'spectrum type']),
     FileContent(u'PDA spectrum', u'MS:1000620',
-                (u'OBSOLETE Spectrum generated from a photodiode array detector'
+                (u'OBSOLETE Spectrum generated from a photodiode array detector '
                  u'(ultraviolet/visible spectrum).'),
                 'data file content',
                 [u'data file content', u'spectrum type']),
-    FileContent(u'mass chromatogram', u'MS:1000810',
-                (u'A plot of the relative abundance of a beam or other'
-                 u'collection of ions as a function of the retention time.'),
+    FileContent(u'ion current chromatogram', u'MS:1000810',
+                (u'Representation of the current of ions versus time.'),
                 'data file content',
                 [u'data file content', u'chromatogram type']),
     FileContent(u'electromagnetic radiation chromatogram', u'MS:1000811',
-                (u'The measurement of electromagnetic properties as a function'
-                 u'of the retention time.'),
+                (u'Representation of electromagnetic properties versus time.'),
                 'data file content',
                 [u'data file content', u'chromatogram type']),
     FileContent(u'MSn spectrum', u'MS:1000580',
-                (u'MSn refers to multi-stage MS2 experiments designed to record'
-                 u'product ion spectra where n is the number of product ion'
-                 u'stages (progeny ions). For ion traps, sequential MS/MS'
-                 u'experiments can be undertaken where n > 2 whereas for a'
-                 u'simple triple quadrupole system n=2. Use the term ms level'
+                (u'MSn refers to multi-stage MS2 experiments designed to record '
+                 u'product ion spectra where n is the number of product ion '
+                 u'stages (progeny ions). For ion traps, sequential MS/MS '
+                 u'experiments can be undertaken where n > 2 whereas for a '
+                 u'simple triple quadrupole system n=2. Use the term ms level '
                  u'(MS:1000511) for specifying n.'),
                 'data file content',
                 [u'mass spectrum', u'data file content', u'spectrum type']),
     FileContent(u'CRM spectrum', u'MS:1000581',
-                (u'Spectrum generated from MSn experiment with three or more'
-                 u'stages of m/z separation and in which a particular multi-'
+                (u'Spectrum generated from MSn experiment with three or more '
+                 u'stages of m/z separation and in which a particular multi- '
                  u'step reaction path is monitored.'),
                 'data file content',
                 [u'mass spectrum', u'data file content', u'spectrum type']),
     FileContent(u'SIM spectrum', u'MS:1000582',
-                (u'Spectrum obtained with the operation of a mass spectrometer'
-                 u'in which the abundances of one ion or several ions of'
-                 u'specific m/z values are recorded rather than the entire mass'
+                (u'Spectrum obtained with the operation of a mass spectrometer '
+                 u'in which the abundances of one ion or several ions of '
+                 u'specific m/z values are recorded rather than the entire mass '
                  u'spectrum (Selected Ion Monitoring).'),
                 'data file content',
                 [u'mass spectrum', u'data file content', u'spectrum type']),
     FileContent(u'SRM spectrum', u'MS:1000583',
-                (u'Spectrum obtained when data are acquired from specific'
-                 u'product ions corresponding to m/z values of selected'
-                 u'precursor ions a recorded via two or more stages of mass'
-                 u'spectrometry. The precursor/product ion pair is called a'
-                 u'transition pair. Data can be obtained for a single'
-                 u'transition pair or multiple transition pairs. Multiple time'
-                 u'segments of different transition pairs can exist in a single'
-                 u'file. Single precursor ions can have multiple product ions'
-                 u'consitituting multiple transition pairs. Selected reaction'
-                 u'monitoring can be performed as tandem mass spectrometry in'
+                (u'Spectrum obtained when data are acquired from specific '
+                 u'product ions corresponding to m/z values of selected '
+                 u'precursor ions a recorded via two or more stages of mass '
+                 u'spectrometry. The precursor/product ion pair is called a '
+                 u'transition pair. Data can be obtained for a single '
+                 u'transition pair or multiple transition pairs. Multiple time '
+                 u'segments of different transition pairs can exist in a single '
+                 u'file. Single precursor ions can have multiple product ions '
+                 u'consitituting multiple transition pairs. Selected reaction '
+                 u'monitoring can be performed as tandem mass spectrometry in '
                  u'time or tandem mass spectrometry in space.'),
                 'data file content',
                 [u'mass spectrum', u'data file content', u'spectrum type']),
     FileContent(u'e/2 mass spectrum', u'MS:1000328',
-                (u'A mass spectrum obtained using a sector mass spectrometer in'
-                 u'which the electric sector field E is set to half the value'
-                 u'required to transmit the main ion-beam. This spectrum'
-                 u'records the signal from doubly charged product ions of'
+                (u'A mass spectrum obtained using a sector mass spectrometer in '
+                 u'which the electric sector field E is set to half the value '
+                 u'required to transmit the main ion-beam. This spectrum '
+                 u'records the signal from doubly charged product ions of '
                  u'charge-stripping reactions.'),
                 'data file content',
                 [u'mass spectrum', u'data file content', u'spectrum type']),
     FileContent(u'constant neutral gain spectrum', u'MS:1000325',
-                (u'A spectrum formed of all product ions that have been'
-                 u'produced by gain of a pre-selected neutral mass following'
-                 u'the reaction with and addition of the gas in a collision'
+                (u'A spectrum formed of all product ions that have been '
+                 u'produced by gain of a pre-selected neutral mass following '
+                 u'the reaction with and addition of the gas in a collision '
                  u'cell.'),
                 'data file content',
                 [u'mass spectrum', u'data file content', u'spectrum type']),
     FileContent(u'constant neutral loss spectrum', u'MS:1000326',
-                (u'A spectrum formed of all product ions that have been'
-                 u'produced with a selected m/z decrement from any precursor'
-                 u'ions. The spectrum shown correlates to the precursor ion'
+                (u'A spectrum formed of all product ions that have been '
+                 u'produced with a selected m/z decrement from any precursor '
+                 u'ions. The spectrum shown correlates to the precursor ion '
                  u'spectrum. See also neutral loss spectrum.'),
                 'data file content',
                 [u'mass spectrum', u'data file content', u'spectrum type']),
     FileContent(u'charge inversion mass spectrum', u'MS:1000322',
-                (u'The measurement of the relative abundance of ions that'
-                 u'result from a charge inversion reaction as a function of'
+                (u'The measurement of the relative abundance of ions that '
+                 u'result from a charge inversion reaction as a function of '
                  u'm/z.'),
                 'data file content',
                 [u'mass spectrum', u'data file content', u'spectrum type']),
     FileContent(u'product ion spectrum', u'MS:1000343',
-                (u'OBSOLETE A mass spectrum recorded from any spectrometer in'
-                 u'which the appropriate m/z separation scan function is set to'
+                (u'OBSOLETE A mass spectrum recorded from any spectrometer in '
+                 u'which the appropriate m/z separation scan function is set to '
                  u'record the product ion or ions of selected precursor ions.'),
                 'data file content',
                 [u'mass spectrum', u'data file content', u'spectrum type']),
     FileContent(u'precursor ion spectrum', u'MS:1000341',
-                (u'Spectrum generated by scanning precursor m/z while'
+                (u'Spectrum generated by scanning precursor m/z while '
                  u'monitoring a fixed product m/z.'),
                 'data file content',
                 [u'mass spectrum', u'data file content', u'spectrum type']),
     FileContent(u'MS1 spectrum', u'MS:1000579',
-                (u'Mass spectrum created by a single-stage MS experiment or the'
+                (u'Mass spectrum created by a single-stage MS experiment or the '
                  u'first stage of a multi-stage experiment.'),
                 'data file content',
                 [u'mass spectrum', u'data file content', u'spectrum type']),
     FileContent(u'total ion current chromatogram', u'MS:1000235',
-                (u'Chromatogram obtained by plotting the total ion current'
-                 u'detected in each of a series of mass spectra recorded as a'
-                 u'function of retention time.'),
+                (u'Representation of the total ion current detected in each of '
+                 u'a series of mass spectra versus time.'),
                 'data file content',
-                [u'mass chromatogram', u'data file content', u'chromatogram type']),
+                [u'ion current chromatogram', u'data file content', u'chromatogram type']),
     FileContent(u'selected reaction monitoring chromatogram', u'MS:1001473',
-                (u'Chromatogram created by creating an array of the'
-                 u'measurements of a selectively monitored reaction at each'
-                 u'time point.'),
+                (u'Representation of an array of the measurements of a '
+                 u'selectively monitored reaction versus time.'),
                 'data file content',
-                [u'mass chromatogram', u'data file content', u'chromatogram type']),
+                [u'ion current chromatogram', u'data file content', u'chromatogram type']),
     FileContent(u'selected ion monitoring chromatogram', u'MS:1001472',
-                (u'Chromatogram created by creating an array of the'
-                 u'measurements of a selectively monitored ion at each time'
-                 u'point.'),
+                (u'Representation of an array of the measurements of a '
+                 u'selectively monitored ion versus time.'),
                 'data file content',
-                [u'mass chromatogram', u'data file content', u'chromatogram type']),
+                [u'ion current chromatogram', u'data file content', u'chromatogram type']),
     FileContent(u'consecutive reaction monitoring chromatogram', u'MS:1001474',
-                (u'OBSOLETE Chromatogram created by creating an array of the'
-                 u'measurements of a series of monitored reactions at each time'
-                 u'point.'),
+                (u'OBSOLETE Representation of an array of the measurements of a '
+                 u'series of monitored reactions versus time.'),
                 'data file content',
-                [u'mass chromatogram', u'data file content', u'chromatogram type']),
+                [u'ion current chromatogram', u'data file content', u'chromatogram type']),
     FileContent(u'basepeak chromatogram', u'MS:1000628',
-                (u'Chromatogram created by creating an array of the most'
-                 u'intense peaks at each time point.'),
+                (u'Representation of an array of the most intense peaks versus '
+                 u'time.'),
                 'data file content',
-                [u'mass chromatogram', u'data file content', u'chromatogram type']),
+                [u'ion current chromatogram', u'data file content', u'chromatogram type']),
     FileContent(u'selected ion current chromatogram', u'MS:1000627',
-                (u'Chromatogram created by creating an array of the'
-                 u'measurements of a specific single ion current at each time'
-                 u'point.'),
+                (u'Representation of an array of the measurements of a specific '
+                 u'single ion current versus time.'),
                 'data file content',
-                [u'mass chromatogram', u'data file content', u'chromatogram type']),
+                [u'ion current chromatogram', u'data file content', u'chromatogram type']),
     FileContent(u'absorption chromatogram', u'MS:1000812',
-                (u'The measurement of light absorbed by the sample as a'
-                 u'function of the retention time.'),
+                (u'Representation of light absorbed by the sample versus time.'),
                 'data file content',
                 [u'electromagnetic radiation chromatogram', u'data file content', u'chromatogram type']),
     FileContent(u'emission chromatogram', u'MS:1000813',
-                (u'The measurement of light emitted by the sample as a function'
-                 u'of the retention time.'),
+                (u'Representation of light emitted by the sample versus time.'),
                 'data file content',
                 [u'electromagnetic radiation chromatogram', u'data file content', u'chromatogram type']),
     FileContent(u'time-delayed fragmentation spectrum', u'MS:1000790',
-                (u'MSn spectrum in which the product ions are collected after a'
-                 u'time delay, which allows the observation of lower energy'
+                (u'MSn spectrum in which the product ions are collected after a '
+                 u'time delay, which allows the observation of lower energy '
                  u'fragmentation processes after precursor ion activation.'),
                 'data file content',
                 [u'MSn spectrum', u'mass spectrum', u'data file content', u'spectrum type']),
     FileContent(u'enhanced multiply charged spectrum', u'MS:1000789',
-                (u'MS1 spectrum that is enriched in multiply-charged ions'
+                (u'MS1 spectrum that is enriched in multiply-charged ions '
                  u'compared to singly-charged ions.'),
                 'data file content',
                 [u'MS1 spectrum', u'mass spectrum', u'data file content', u'spectrum type']),
@@ -659,14 +641,14 @@ spectrum_representation = []
 # ]]]
 spectrum_representation = TermSet([
     FileContent(u'centroid spectrum', u'MS:1000127',
-                (u'Processing of profile data to produce spectra that contains'
-                 u'discrete peaks of zero width. Often used to reduce the size'
+                (u'Processing of profile data to produce spectra that contains '
+                 u'discrete peaks of zero width. Often used to reduce the size '
                  u'of dataset.'),
                 'spectrum representation',
                 [u'spectrum representation']),
     FileContent(u'profile spectrum', u'MS:1000128',
-                (u'A profile mass spectrum is created when data is recorded'
-                 u'with ion current (counts per second) on one axis and'
+                (u'A profile mass spectrum is created when data is recorded '
+                 u'with ion current (counts per second) on one axis and '
                  u'mass/charge ratio on another axis.'),
                 'spectrum representation',
                 [u'spectrum representation']),
@@ -800,7 +782,8 @@ class FileInformation(MutableMapping):
                         "Source File %r does not exist" % (source,))
             source = SourceFile.from_path(source)
         elif not isinstance(source, SourceFile):
-            raise TypeError("Must pass an object of type %r, could not coerce %r" % (SourceFile, type(source)))
+            raise TypeError("Must pass an object of type %r, could not coerce %r" % (
+                SourceFile, type(source)))
         self.source_files.append(source)
 
     def add_content(self, key, value=None):
