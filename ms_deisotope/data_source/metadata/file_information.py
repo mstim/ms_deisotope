@@ -127,7 +127,7 @@ class NativeIDParser(object):
     def search(self, string):
         match = self.parser.search(string)
         if match is None:
-            return {}
+            raise ValueError("%r did not match expected nativeID format %s!" % (string, self.parser.pattern, ))
         groups = match.groups()
         n = len(groups)
         i = 0
