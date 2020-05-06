@@ -212,6 +212,41 @@ class DeconvolutedPeakSolution(DeconvolutedPeak):
         yield self.fit
 
 
+class DeconvolutedPeakDriftTime(DeconvolutedPeak):
+    """
+       Extends :class:`DeconvolutedPeak` to also include a drift_time attribute.
+
+       Attributes
+       ----------
+       drift_time : float
+         Drift time
+       """
+    __slots__ = [
+        "solution", "fit",
+        "neutral_mass", "intensity", "signal_to_noise",
+        "index", "full_width_at_half_max", "charge",
+        "a_to_a2_ratio", "most_abundant_mass", "average_mass",
+        "score", "envelope", "mz", "chosen_for_msms", 'area', "drift_time"
+    ]
+
+    def __init__(self, drift_time, *args, **kwargs):
+        self.drift_time = drift_time
+        super(DeconvolutedPeakDriftTime, self).__init__(*args, **kwargs)
+
+    def clone(self):
+        return DeconvolutedPeakDriftTime(
+            self.solution, self.fit, self.neutral_mass, self.intensity, self.charge, self.signal_to_noise,
+            self.index, self.full_width_at_half_max, self.a_to_a2_ratio,
+            self.most_abundant_mass, self.average_mass, self.score,
+            self.envelope, self.mz, self.chosen_for_msms, self.area, self.drift_time)
+
+    def __reduce__(self):
+        return DeconvolutedPeakDriftTime, (
+            self.solution, self.fit, self.neutral_mass, self.intensity, self.charge, self.signal_to_noise,
+            self.index, self.full_width_at_half_max, self.a_to_a2_ratio,
+            self.most_abundant_mass, self.average_mass, self.score,
+            self.envelope, self.mz, self.chosen_for_msms, self.area, self.drift_time)
+
 class DeconvolutedPeakSet(Base):
     """
     Represents a collection of :class:`DeconvolutedPeak` instances under multiple orderings.
