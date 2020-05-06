@@ -37,6 +37,7 @@ metadata that :class:`~.MzMLSerializer` writes to an external file.
 '''
 import os
 from collections import OrderedDict
+
 try:
     from collections import Sequence, Mapping
 except ImportError:
@@ -75,6 +76,7 @@ class SpectrumDescription(Sequence):
     '''A helper class to calculate properties of a spectrum derived from
     their peak data or raw signal
     '''
+
     def __init__(self, attribs=None):
         Sequence.__init__(self)
         self.descriptors = list(attribs or [])
@@ -853,9 +855,9 @@ class MzMLSerializer(ScanSerializerBase):
             precursor_information = None
 
         spectrum_params = [
-            {"name": "ms level", "value": scan.ms_level},
-            {"name": "MS1 spectrum"} if scan.ms_level == 1 else {"name": "MSn spectrum"},
-        ] + list(descriptors)
+                              {"name": "ms level", "value": scan.ms_level},
+                              {"name": "MS1 spectrum"} if scan.ms_level == 1 else {"name": "MSn spectrum"},
+                          ] + list(descriptors)
 
         spectrum_params.extend(self._get_annotations(scan))
 
@@ -1389,6 +1391,7 @@ class ProcessedMzMLDeserializer(MzMLLoader, ScanDeserializerBase):
                 out.append(pinfo)
         return out
 
+
 class DriftTimeMzMLDeserializer(MzMLLoader, ScanDeserializerBase):
     """Extends :class:`.MzMLLoader` to support deserializing preprocessed data
     that contains a drift time attribute.
@@ -1398,21 +1401,19 @@ class DriftTimeMzMLDeserializer(MzMLLoader, ScanDeserializerBase):
         super(DriftTimeMzMLDeserializer, self).__init__(source_file, decode_binary=True)
 
     def deserialize_deconvoluted_peak_set(self, scan_dict):
-        envelopes = decode_envelopes(scan_dict["isotopic envelopes array"])
         peaks = []
         mz_array = scan_dict['m/z array']
         intensity_array = scan_dict['intensity array']
         charge_array = scan_dict['charge array']
-        score_array = scan_dict['deconvolution score array']
         drift_time = scan_dict['drift time in bins']
         n = len(scan_dict['m/z array'])
         for i in range(n):
             mz = mz_array[i]
             charge = charge_array[i]
             peak = DeconvolutedPeakDriftTime(
-                neutral_mass(mz, charge), intensity_array[i], charge=charge, signal_to_noise=score_array[i],
+                drift_time, neutral_mass(mz, charge), intensity_array[i], charge=charge, signal_to_noise=None,
                 index=0, full_width_at_half_max=0, a_to_a2_ratio=0, most_abundant_mass=0,
-                average_mass=0, score=score_array[i], envelope=envelopes[i], mz=mz, drift_time=drift_time
+                average_mass=0,  mz=mz
             )
             peaks.append(peak)
         peaks = DeconvolutedPeakSet(peaks)
@@ -1472,10 +1473,13 @@ class DriftTimeMzMLDeserializer(MzMLLoader, ScanDeserializerBase):
         return pinfo
 
     def _make_scan(self, data):
-        return super(DriftTimeMzMLDeserializer, self)._make_scan(data)
+        scan = super(DriftTimeMzMLDeserializer, self)._make_scan(data)
+        scan.deconvoluted_peak_set = self.deserialize_deconvoluted_peak_set(data)
+        return scan
 
     def _pick_peaks_vendor(self, scan, *args, **kwargs):
         pass
+
 
 try:
     has_c = True
