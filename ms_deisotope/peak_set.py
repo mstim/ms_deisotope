@@ -222,11 +222,11 @@ class DeconvolutedPeakDriftTime(DeconvolutedPeak):
          Drift time
        """
     __slots__ = [
-        "solution", "fit",
-        "neutral_mass", "intensity", "signal_to_noise",
-        "index", "full_width_at_half_max", "charge",
+        "drift_time",
+        "neutral_mass", "intensity",
+        "index", "full_width_at_half_max", "charge", "signal_to_noise",
         "a_to_a2_ratio", "most_abundant_mass", "average_mass",
-        "score", "envelope", "mz", "chosen_for_msms", 'area', "drift_time"
+        "score", "envelope", "mz", "chosen_for_msms", 'area'
     ]
 
     def __init__(self, drift_time, *args, **kwargs):
@@ -235,17 +235,17 @@ class DeconvolutedPeakDriftTime(DeconvolutedPeak):
 
     def clone(self):
         return DeconvolutedPeakDriftTime(
-            self.solution, self.fit, self.neutral_mass, self.intensity, self.charge, self.signal_to_noise,
+            self.drift_time, self.neutral_mass, self.intensity, self.charge, self.signal_to_noise,
             self.index, self.full_width_at_half_max, self.a_to_a2_ratio,
             self.most_abundant_mass, self.average_mass, self.score,
-            self.envelope, self.mz, self.chosen_for_msms, self.area, self.drift_time)
+            self.envelope, self.mz, self.chosen_for_msms, self.area)
 
     def __reduce__(self):
         return DeconvolutedPeakDriftTime, (
-            self.solution, self.fit, self.neutral_mass, self.intensity, self.charge, self.signal_to_noise,
+            self.drift_time, self.neutral_mass, self.intensity, self.charge, self.signal_to_noise,
             self.index, self.full_width_at_half_max, self.a_to_a2_ratio,
             self.most_abundant_mass, self.average_mass, self.score,
-            self.envelope, self.mz, self.chosen_for_msms, self.area, self.drift_time)
+            self.envelope, self.mz, self.chosen_for_msms, self.area)
 
 class DeconvolutedPeakSet(Base):
     """
