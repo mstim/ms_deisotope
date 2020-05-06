@@ -944,6 +944,47 @@ class PrecursorInformation(_IonMobilityMixin):
         return self.extracted_mz, True
 
 
+class PrecursorDriftInformation(PrecursorInformation):
+    """
+    An extension of PrecursorInformation that also contains a drift time attribute.
+
+    Attributes
+    ----------
+    drift_time : float
+        The mean drift time
+    """
+
+    def __init__(self, drift_time=0, *args, **kwargs):
+        self.drift_time = drift_time
+        super().__init__(*args, **kwargs)
+
+    def copy(self):
+        """Make a shallow copy of this object.
+
+        Returns
+        -------
+        :class:`PrecursorDriftInformation`
+        """
+        dup = PrecursorDriftInformation(
+            self.mz, self.intensity, self.charge, self.precursor_scan_id, self.source,
+            self.extracted_neutral_mass, self.extracted_charge, self.extracted_intensity,
+            self.peak, self.extracted_peak, self.defaulted, self.orphan,
+            self.product_scan_id, self.annotations, self.coisolation, self.drift_time)
+        return dup
+
+    def clone(self):
+        """Make a shallow copy of this object.
+
+        .. note::
+
+            This is an alias of :meth:`copy`
+
+        Returns
+        -------
+        :class:`PrecursorDriftInformation`
+        """
+        return self.copy()
+
 class TICMethods(object):
     """A helper class that will figure out the most refined signal source to
     calculate the total ion current from.

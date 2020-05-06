@@ -56,7 +56,7 @@ except ImportError:
     writer = None
 
 from ms_deisotope import version as lib_version
-from ms_deisotope.peak_set import DeconvolutedPeak, DeconvolutedPeakSet
+from ms_deisotope.peak_set import DeconvolutedPeak, DeconvolutedPeakSet, DeconvolutedPeakDriftTime
 from ms_deisotope.averagine import neutral_mass
 from ms_deisotope.qc.isolation import CoIsolation
 from ms_deisotope.data_source.common import (
@@ -1389,6 +1389,93 @@ class ProcessedMzMLDeserializer(MzMLLoader, ScanDeserializerBase):
                 out.append(pinfo)
         return out
 
+class DriftTimeMzMLDeserializer(MzMLLoader, ScanDeserializerBase):
+    """Extends :class:`.MzMLLoader` to support deserializing preprocessed data
+    that contains a drift time attribute.
+    """
+
+    def __init__(self, source_file):
+        super(DriftTimeMzMLDeserializer, self).__init__(source_file, decode_binary=True)
+
+    def deserialize_deconvoluted_peak_set(self, scan_dict):
+        envelopes = decode_envelopes(scan_dict["isotopic envelopes array"])
+        peaks = []
+        mz_array = scan_dict['m/z array']
+        intensity_array = scan_dict['intensity array']
+        charge_array = scan_dict['charge array']
+        score_array = scan_dict['deconvolution score array']
+        drift_time = scan_dict['drift time in bins']
+        n = len(scan_dict['m/z array'])
+        for i in range(n):
+            mz = mz_array[i]
+            charge = charge_array[i]
+            peak = DeconvolutedPeakDriftTime(
+                neutral_mass(mz, charge), intensity_array[i], charge=charge, signal_to_noise=score_array[i],
+                index=0, full_width_at_half_max=0, a_to_a2_ratio=0, most_abundant_mass=0,
+                average_mass=0, score=score_array[i], envelope=envelopes[i], mz=mz, drift_time=drift_time
+            )
+            peaks.append(peak)
+        peaks = DeconvolutedPeakSet(peaks)
+        peaks._reindex()
+        return peaks
+
+    def _precursor_information(self, scan):
+        """Returns information about the precursor ion,
+                if any, that this scan was derived form.
+
+                Returns `None` if this scan has no precursor ion
+
+                Parameters
+                ----------
+                scan : Mapping
+                    The underlying scan information storage,
+                    usually a `dict`
+
+                Returns
+                -------
+                PrecursorInformation
+                """
+        pinfo_dict = self._get_selected_ion(scan)
+        if pinfo_dict is None:
+            return None
+        try:
+            precursor_scan_id = scan["precursorList"]['precursor'][0]['spectrumRef']
+        except KeyError:
+            precursor_scan_id = None
+            # only attempt to scan if there are supposed to be MS1 scans in the file
+            if self._has_ms1_scans() and self._use_index:
+                last_index = self._scan_index(scan) - 1
+                current_level = self._ms_level(scan)
+                i = 0
+                while last_index > 0 and i < 100:
+                    prev_scan = self.get_scan_by_index(last_index)
+                    if prev_scan.ms_level >= current_level:
+                        last_index -= 1
+                    else:
+                        precursor_scan_id = self._scan_id(prev_scan._data)
+                        break
+                    i += 1
+
+        keys = set(pinfo_dict) - {"selected ion m/z", 'peak intensity', 'charge state', 'drift time in bins'}
+
+        pinfo = PrecursorInformation(
+            mz=pinfo_dict['selected ion m/z'],
+            intensity=pinfo_dict.get('peak intensity', 0.0),
+            charge=pinfo_dict.get('charge state', ChargeNotProvided),
+            drift_time=pinfo_dict.get('drift time in bins', 0.0),
+            precursor_scan_id=precursor_scan_id,
+            source=self,
+            product_scan_id=self._scan_id(scan),
+            annotations={
+                k: pinfo_dict[k] for k in keys
+            })
+        return pinfo
+
+    def _make_scan(self, data):
+        return super(DriftTimeMzMLDeserializer, self)._make_scan(data)
+
+    def _pick_peaks_vendor(self, scan, *args, **kwargs):
+        pass
 
 try:
     has_c = True
